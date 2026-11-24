@@ -17,13 +17,17 @@ This is a **private release-preparation branch**, not a published release.
 - [ ] Resolve whether the bridge's tight reflection integration or copied/adapted expressions trigger AnoMech AGPL obligations; initial static review is inconclusive.
 - [x] Confirm upstream repository license texts: AnoMech AGPL-3.0 and BossMod Reborn BSD-3-Clause.
 - [x] Owner selected AGPL-3.0-or-later for SimBridge's own contributions; staged full license text, upstream notices, BSD license and approved optional Ko-fi link.
-- [ ] Confirm rights to license all contributions, any adapted-code notices and corresponding-source obligations for actual installed dependency releases; see PROVENANCE.md.
+- [x] Owner confirmed independent personal project and approved license for their own contributions.
+- [x] Resolve published AnoMech 0.5.1.0 and BossMod Reborn 7.5.8.10 source tags and verify their license files.
+- [ ] Identify exact local Dalamud/Lumina build provenance and resolve adapted-code notices and corresponding-source obligations; see PROVENANCE.md.
 - [x] Stage verified original plugin/AnoBossBridge.json and plugin/AnoBossBridge.deps.json text metadata; preserve internal identity.
 - [x] Add documented build-only, validation-only and explicit BossMod target options; preserve default historical .9/.10 validation.
 - [x] Owner confirmed successful clean Windows compilation with warnings treated as errors, and groups 1–5 passed on commit 565afc7.
 - [x] Correct remaining hardcoded historical target in group 6; both groups 6 and 10 share selected versions. Add ValidateOnly DLL prerequisite.
 - [x] Clean corrected checkout `0b011fb` passed all 10 offline groups and all 11 installed compatibility groups on BossMod 7.5.8.10 / AnoMech 0.5.1.0; all three generated plugin files match the original tested package by SHA-256.
-- [ ] Prepare final release archive with applicable licenses, notices and corresponding-source access; validate new-user installation, config persistence, update and rollback.
+- [x] Stage private distribution preparation script, source allowlist, source index, and inactive repository JSON template.
+- [ ] Execute packaging script on Windows; inspect and verify generated archives and local feed; validate installation, config persistence, update and rollback before launch.
+- [ ] Finalize all required corresponding-source access and notices before distributing publicly.
 - [x] Verify new source commit uses azazev GitHub noreply identity.
 - [x] Initial reachable main/staging history audit: 14 commits, 55 file changes; no obvious credential, personal path or private email patterns in retrieved complete patches. Verified author identities and initial automated GitHub committer; scanned original DLL printable strings.
 - [ ] Final history/ref, PR discussion and release asset privacy audit after remaining edits (tags endpoint not accessible in current connector).
@@ -34,4 +38,4 @@ The original DLL retains the internal name `AnoBossBridge` to preserve configura
 
 Build and package-file integrity gate passed for the documented Windows environment. Historical BossMod 7.5.8.9 was not retested in this run. Distribution and provenance gates remain OPEN. No runtime source or release DLL changes.
 
-No `repo.json`, public release, or tag is active yet.
+No root `repo.json`, public release, or tag is active yet. The draft template in release/ is not a live feed; generated packages must remain private pending review.

@@ -10,9 +10,11 @@ SimBridge is an independent compatibility project by azazev. It is not endorsed 
 - [Dalamud.NET.Sdk](https://github.com/goatcorp/Dalamud.NET.Sdk) — optional standard project build SDK; upstream repository identifies MIT. See its [license](https://github.com/goatcorp/Dalamud.NET.Sdk/blob/master/LICENSE.txt).
 - [Lumina](https://github.com/NotAdam/Lumina) — locally referenced framework dependency; upstream repository identifies WTFPL. See its upstream repository for applicable license and notices.
 
+BossMod Reborn's [third-party notices at release 7.5.8.10](https://github.com/FFXIV-CombatReborn/BossmodReborn/blob/05bdf3abd1963c84105784273a8c171bb7cf0b7c/THIRD_PARTY_NOTICES.md) identify KamiToolKit (MIT) and RebornMaterial (LGPL-3.0-or-later). Those assemblies and overlay assets are not included in the verified SimBridge plugin payload. Any corresponding-source obligations extending to upstream components remain under review.
+
 ## Distribution scope
 
-The verified baseline contains only SimBridge's DLL, manifest and dependency metadata in the plugin directory; upstream DLLs and assets are not bundled. Reflection contracts contain upstream identifiers, member shapes and method fingerprints; they do not package the upstream assemblies. The original source snapshots consulted are documented in [release/PROVENANCE.md](release/PROVENANCE.md), not claimed as exact matches for all installed dependency binaries.
+The verified baseline contains only SimBridge's DLL, manifest and dependency metadata in the plugin directory; upstream DLLs and assets are not bundled. Reflection contracts contain upstream identifiers, member shapes and method fingerprints; they do not package the upstream assemblies. The original source snapshots and resolved published release tags are documented in [release/PROVENANCE.md](release/PROVENANCE.md). See [release/SOURCE.md](release/SOURCE.md) for the planned corresponding-source index. These are not claimed as cryptographic matches for every installed dependency binary.
 
 The license texts and attributions above are included conservatively. A dependency-only arrangement is not a determination of independent-work status under AGPL. Before publication, resolve any additional copyright notices, applicable licenses and corresponding-source requirements for the precise distributed work and dependency versions. Do not imply upstream endorsement.
 

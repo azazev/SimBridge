@@ -433,3 +433,6 @@ FodyWeavers.xsd
 /tooling/UiTests.dll
 /tooling/ProbeTests.runtimeconfig.json
 /tooling/UiTests.runtimeconfig.json
+
+# Private distribution output
+/release-output/

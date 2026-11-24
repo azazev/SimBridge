@@ -10,10 +10,19 @@ Private staging record, 2026-11-24. This is an engineering review, not a legal o
 - The owner selected AGPL-3.0-or-later for SimBridge's own contributions. This does not change upstream license terms. The BSD copyright and full license have been preserved; the upstream AGPLv3 text is included.
 - The Free Software Foundation discusses plugin integration and corresponding source in its [GNU license FAQ](https://www.gnu.org/licenses/gpl-faq.html) and [AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html), particularly sections 1, 5, 6 and 13. Close communication with upstream internals warrants review even though binaries are distributed separately.
 
+## Additional review — owner confirmation and upstream release tags
+
+- The owner confirmed that SimBridge is an independent personal project, with no other person, employer or company involved in its ownership or development; the owner approved AGPL-3.0-or-later for their own contributions and confirmed the preceding owner-side statement about no independently introduced external code outside the development sessions.
+- AnoMech release [v0.5.1.0](https://github.com/anomek/AnoMech/releases/tag/v0.5.1.0) resolves to [6aec4a5940df56ebc4f70a2fdddeceb31c7848b8](https://github.com/anomek/AnoMech/tree/6aec4a5940df56ebc4f70a2fdddeceb31c7848b8). Its LICENSE.md is identical to the staged AGPLv3 text (Git blob 0ad25db4bd1d86c452db3f9602ccdbe172438f52).
+- BossMod Reborn release [7.5.8.10](https://github.com/FFXIV-CombatReborn/BossmodReborn/releases/tag/7.5.8.10) resolves to [05bdf3abd1963c84105784273a8c171bb7cf0b7c](https://github.com/FFXIV-CombatReborn/BossmodReborn/tree/05bdf3abd1963c84105784273a8c171bb7cf0b7c). Its LICENSE is identical to the staged BSD-3-Clause text (Git blob 560bcd91c155c8c8a25d0df7a787c41e85c64bce). Its upstream third-party notices identify KamiToolKit (MIT) and RebornMaterial (LGPL-3.0-or-later); they are not bundled in the three SimBridge files.
+- Published tag-to-source mapping is verified for these two upstream releases, not a cryptographic match of the locally installed DLLs to release assets. The exact locally used Dalamud/API 15 build and Lumina dependency revision still need identifying.
+- A review of the original production source found no explicit copied/adapted-code notices; this does not establish absence of copied expression. No independent exhaustive comparison with all upstream or tutorial source has been performed.
+- PR discussion retrieval returned zero comments at this review point.
+
 ## Open pre-publication gates
 
-- Confirm the contributor has the rights to license SimBridge's own contributions, identify any code copied or adapted from other sources (including samples/tutorials), and preserve all applicable notices.
-- Identify exact source revisions and licenses corresponding to installed AnoMech 0.5.1.0, BossMod Reborn 7.5.8.10 and relevant Dalamud/API 15 dependencies. Prior consulted snapshots are not a verified mapping of those installed builds.
+- Owner-side authorization is recorded. Identify any copied or adapted expressions (including AI-assisted contributions) and preserve all applicable notices; the owner confirmation does not certify the entire code provenance.
+- The two upstream release tags and license files are resolved above; identify the precise Dalamud/API 15 and locally referenced Lumina build revisions and, where needed, match local binaries to upstream published assets.
 - Assess combined-work and corresponding-source obligations for the intended binary distribution and preserve applicable upstream terms. Provide complete corresponding source, build/install scripts and any additional required source access for the exact release, rather than assuming a repository link alone satisfies every obligation.
 - Verify license and notice files accompany distributed assets where required. The public release is blocked pending resolution.
 
