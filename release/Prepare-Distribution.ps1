@@ -21,9 +21,18 @@ foreach ($name in $expected.Keys) {
     if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -ne $expected[$name]) { throw "Unexpected SHA-256: $name" }
 }
 $manifest = Get-Content -LiteralPath (Join-Path $plugin 'AnoBossBridge.json') -Raw | ConvertFrom-Json
-$entry = @(Get-Content -LiteralPath (Join-Path $PSScriptRoot 'repo.template.json') -Raw | ConvertFrom-Json)
-if ($entry.Count -ne 1) { throw 'Expected one store entry' }
-$entry = $entry[0]
+# Windows PowerShell 5.1 emits a JSON array as one pipeline object;
+# newer PowerShell may enumerate it. Assign first, then normalize the variable.
+$templateJson = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'repo.template.json') -Raw
+if (-not $templateJson.TrimStart().StartsWith('[')) { throw 'Expected a JSON array in repository template' }
+$decoded = ConvertFrom-Json -InputObject $templateJson
+$entries = @($decoded)
+if ($entries.Count -ne 1) { throw 'Expected one store entry' }
+$entry = $entries[0]
+if ($entry -isnot [System.Management.Automation.PSCustomObject]) { throw 'Expected a single JSON store object, not a nested array' }
+foreach ($property in @('DownloadLinkInstall','DownloadLinkUpdate','LastUpdate','IsTestingExclusive','IsHide','Name','InternalName','AssemblyVersion','DalamudApiLevel','ApplicableVersion','Author')) {
+    if ($null -eq $entry.PSObject.Properties[$property]) { throw "Missing store property: $property" }
+}
 foreach ($key in @('Name','InternalName','AssemblyVersion','DalamudApiLevel','ApplicableVersion','Author')) {
     if ($entry.$key -ne $manifest.$key) { throw "Manifest/feed mismatch: $key" }
 }
@@ -80,11 +89,18 @@ try {
     Verify-ZipEntries $sourceZip $sourceFiles $false
     $utf8 = [System.Text.UTF8Encoding]::new($false)
     # Planned feed is intentionally not active, and LastUpdate is stamped only at publication.
-    [IO.File]::WriteAllText((Join-Path $result 'repo.json'),(ConvertTo-Json -InputObject @($entry) -Depth 10),$utf8)
-    $entry.DownloadLinkInstall = "http://127.0.0.1:$LocalTestPort/latest.zip"
-    $entry.DownloadLinkUpdate = $entry.DownloadLinkInstall
+    # Preserve the reviewed public template exactly; serialize only the local variant.
+    [IO.File]::WriteAllText((Join-Path $result 'repo.json'),$templateJson,$utf8)
+    $localUrl = "http://127.0.0.1:$LocalTestPort/latest.zip"
+    $entry.DownloadLinkInstall = $localUrl
+    $entry.DownloadLinkUpdate = $localUrl
     $entry.LastUpdate = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
-    [IO.File]::WriteAllText((Join-Path $result 'repo.local.json'),(ConvertTo-Json -InputObject @($entry) -Depth 10),$utf8)
+    $localJson = ConvertTo-Json -InputObject (,$entry) -Depth 10
+    $localDecoded = ConvertFrom-Json -InputObject $localJson
+    $localEntries = @($localDecoded)
+    if (-not $localJson.TrimStart().StartsWith('[') -or $localEntries.Count -ne 1 -or $localEntries[0] -isnot [System.Management.Automation.PSCustomObject]) { throw 'Local feed must be an array containing exactly one store object' }
+    if ($localEntries[0].DownloadLinkInstall -ne $localUrl -or $localEntries[0].DownloadLinkUpdate -ne $localUrl -or $localEntries[0].InternalName -ne $manifest.InternalName) { throw 'Local feed round-trip verification failed' }
+    [IO.File]::WriteAllText((Join-Path $result 'repo.local.json'),$localJson,$utf8)
     $checksums = @(Get-ChildItem -LiteralPath $result -File | Sort-Object Name | ForEach-Object {
         "$((Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant())  $($_.Name)"
     })
