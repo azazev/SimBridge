@@ -1,0 +1,18 @@
+{
+  "Author": "azazev",
+  "Name": "SimBridge",
+  "InternalName": "AnoBossBridge",
+  "AssemblyVersion": "0.8.0.0",
+  "Description": "AnoMech to BossmodReborn compatibility bridge. /simbridge opens controls. Enabled bridge limits simulation modules to supported scenarios; native mechanic guidance and real-fight settings unchanged. Dev mode provides diagnostics.",
+  "Punchline": "Experimental AnoMech encounter activation for BossmodReborn.",
+  "ApplicableVersion": "any",
+  "DalamudApiLevel": 15,
+  "Tags": [
+    "diagnostics",
+    "simulation"
+  ],
+  "LoadRequiredState": 0,
+  "LoadSync": false,
+  "CanUnloadAsync": false
+}
+
