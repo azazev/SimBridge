@@ -4,19 +4,29 @@ using AnoBossBridge;
 
 internal static class InstalledCompatibilityTests
 {
-    internal static void Run(string[] requestedVersions)
+    internal static string[] ResolveTargets(string[] requestedVersions)
     {
         var store = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "XIVLauncher", "installedPlugins");
-        var hooks = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "XIVLauncher", "addon", "Hooks", "dev");
-        var anoDir = Path.Combine(store, "AnoMech", "0.5.1.0");
         var versions = requestedVersions.Length == 0 ? new[] { "7.5.8.9", "7.5.8.10" } : requestedVersions;
         if (versions.Distinct(StringComparer.Ordinal).Count() != versions.Length)
             throw new ArgumentException("Duplicate BossMod validation targets.");
         foreach (var version in versions)
+        {
             if (!Version.TryParse(version, out var parsed) || parsed.Revision < 0 || parsed.ToString() != version)
                 throw new ArgumentException("Expected a four-part BossMod version: " + version);
-        if (!File.Exists(Path.Combine(anoDir, "AnoMech.dll")))
+            if (!File.Exists(Path.Combine(store, "BossModReborn", version, "BossModReborn.dll")))
+                throw new Exception("Missing requested BossMod Reborn validation target " + version);
+        }
+        if (!File.Exists(Path.Combine(store, "AnoMech", "0.5.1.0", "AnoMech.dll")))
             throw new Exception("Missing validation target AnoMech 0.5.1.0");
+        return versions;
+    }
+
+    internal static void Run(string[] versions)
+    {
+        var store = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "XIVLauncher", "installedPlugins");
+        var hooks = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "XIVLauncher", "addon", "Hooks", "dev");
+        var anoDir = Path.Combine(store, "AnoMech", "0.5.1.0");
         foreach (var version in versions)
         {
             var bossDir = Path.Combine(store, "BossModReborn", version);

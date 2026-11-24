@@ -48,6 +48,9 @@ if ($Mode -ne 'ValidateOnly') {
     Write-Output 'Plugin compiled with warnings treated as errors.'
 }
 if ($Mode -eq 'BuildOnly') { return }
+if ($Mode -eq 'ValidateOnly' -and -not (Test-Path -LiteralPath (Join-Path $release 'AnoBossBridge.dll') -PathType Leaf)) {
+    throw 'ValidateOnly requires an existing compiled DLL from this checkout. Run BuildOnly first.'
+}
 Write-Output "Offline validation targets: BossMod $($BossModVersions -join ', '); AnoMech 0.5.1.0"
 $testArgs = $common + @('/target:exe', ('/out:"' + (Join-Path $PSScriptRoot 'ProbeTests.dll') + '"'))
 $testArgs += @($globals, (Join-Path $projectRoot 'Probe.cs'), (Join-Path $projectRoot 'Activation.cs'), (Join-Path $projectRoot 'Compatibility.cs'), (Join-Path $projectRoot 'ContractShape.cs'), (Join-Path $projectRoot 'SimulationGate.cs'), (Join-Path $projectRoot 'RoleSync.cs'), (Join-Path $projectRoot 'DarklitSync.cs'), (Join-Path $projectRoot 'RelativitySync.cs'), (Join-Path $projectRoot 'CrystallizeSync.cs'), (Join-Path $projectRoot 'NativeDiamondSync.cs'), (Join-Path $projectRoot 'NativeLightRampantSync.cs'), (Join-Path $projectRoot 'tests\RoleTests.cs'), (Join-Path $projectRoot 'tests\NewMechanicTests.cs'), (Join-Path $projectRoot 'tests\NativeDiamondTests.cs'), (Join-Path $projectRoot 'tests\NativeTwinTests.cs'), (Join-Path $projectRoot 'tests\NativeLightRampantTests.cs'), (Join-Path $projectRoot 'tests\ContractTests.cs'), (Join-Path $projectRoot 'tests\SimulationGateTests.cs'), (Join-Path $projectRoot 'tests\ResilienceTests.cs'), (Join-Path $projectRoot 'tests\InstalledCompatibilityTests.cs')) | ForEach-Object { '"' + $_ + '"' }

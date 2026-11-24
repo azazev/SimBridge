@@ -11,13 +11,13 @@ The existing direct Roslyn build pins .NET SDK 10.0.100, .NET reference pack 10.
 - For compilation: Dalamud API 15 development DLLs under %APPDATA%\XIVLauncher\addon\Hooks\dev (Dalamud.dll, Dalamud.Common.dll, Lumina.dll, Dalamud.Bindings.ImGui.dll).
 - For installed compatibility validation: AnoMech 0.5.1.0 and each selected BossMod Reborn version in the standard XIVLauncher\installedPlugins version folders under %APPDATA%, with their required assemblies and local Dalamud libraries available.
 
-Do not downgrade a working game setup merely to run the historical suite. Use the explicit installed-version target when validating a current environment. The default historical targets are still mandatory if no override is supplied.
+Do not downgrade a working game setup merely to run the historical suite. Use the explicit installed-version target when validating a current environment. The default historical targets are still mandatory if no override is supplied. Both installed-assembly test groups receive the same list; other historical versions are not auto-discovered.
 
 ## Commands
 
 Download or clone the reviewed source into a new folder. Open PowerShell in that folder; use only reviewed scripts. No administrator privileges are required.
 
-Compile and run all ten offline groups, checking only BossMod 7.5.8.10 in the installed compatibility group:
+Compile and run all ten offline groups, checking only BossMod 7.5.8.10 in both installed-assembly contract groups (6 and 10):
 
     .\Build-SimBridge-v0.8.0.ps1 -BossModVersions '7.5.8.10'
 
@@ -31,7 +31,7 @@ Compilation only, without tests or updating the plugin directory:
 
     .\Build-SimBridge-v0.8.0.ps1 -Mode BuildOnly
 
-Offline validation only, without building or copying the plugin DLL:
+Offline validation only, without building or copying the plugin DLL (requires an existing DLL compiled from the same checkout; run BuildOnly first if needed):
 
     .\Build-SimBridge-v0.8.0.ps1 -Mode ValidateOnly -BossModVersions '7.5.8.10'
 

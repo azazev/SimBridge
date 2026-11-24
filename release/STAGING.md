@@ -19,7 +19,9 @@ This is a **private release-preparation branch**, not a published release.
 - [ ] Finalize copyright/provenance review, choose the SimBridge license, and add required notices before public visibility.
 - [x] Stage verified original plugin/AnoBossBridge.json and plugin/AnoBossBridge.deps.json text metadata; preserve internal identity.
 - [x] Add documented build-only, validation-only and explicit BossMod target options; preserve default historical .9/.10 validation.
-- [ ] Verify revised tooling on Windows using the installed 7.5.8.10 target; clean compilation and offline validation have not yet been rerun.
+- [x] Owner confirmed successful clean Windows compilation with warnings treated as errors, and groups 1–5 passed on commit 565afc7.
+- [x] Correct remaining hardcoded historical target in group 6; both groups 6 and 10 share selected versions. Add ValidateOnly DLL prerequisite.
+- [ ] Rerun complete offline validation on the corrected checkout using BossMod 7.5.8.10.
 - [ ] Confirm clean build, release packaging, configuration persistence and new-user installation.
 - [x] Verify new source commit uses azazev GitHub noreply identity.
 - [ ] Audit complete Git history and release files before public visibility.
@@ -28,6 +30,6 @@ This is a **private release-preparation branch**, not a published release.
 
 The original DLL retains the internal name `AnoBossBridge` to preserve configuration identity. Do not rename DLL/manifest/deps files independently.
 
-Build gate is still OPEN: the owner's environment checks found all pinned prerequisites except historical BossMod 7.5.8.9. The revised tooling is statically reviewed only, pending a clean-checkout build and selected-target validation. No runtime source or release DLL changes.
+Build gate is still OPEN: the owner's environment checks found all pinned prerequisites except historical BossMod 7.5.8.9. The first clean-checkout build succeeded; the test run stopped at group 6 due to a leftover .9 requirement. Corrected tooling is statically reviewed only; complete rerun and DLL comparison remain pending. No runtime source or release DLL changes.
 
 No `repo.json`, public release, or tag is active yet.

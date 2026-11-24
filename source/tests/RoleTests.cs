@@ -184,10 +184,11 @@ NewMechanicTests.Run();
 NativeDiamondTests.Run();
 NativeTwinTests.Run();
 NativeLightRampantTests.Run();
-ContractTests.Run();
+var selectedBossModVersions = InstalledCompatibilityTests.ResolveTargets(args);
+ContractTests.Run(selectedBossModVersions);
 SimulationGateTests.Run();
 ResilienceTests.Run();
-InstalledCompatibilityTests.Run(args);
+InstalledCompatibilityTests.Run(selectedBossModVersions);
 Console.WriteLine("Core regression and resilience groups passed.");
 
 

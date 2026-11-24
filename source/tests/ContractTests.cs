@@ -3,15 +3,11 @@ using System.Reflection.PortableExecutable;
 
 internal static class ContractTests
 {
-    internal static void Run()
+    internal static void Run(string[] versions)
     {
         var installed = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "XIVLauncher", "installedPlugins");
-        // The currently installed target is required; older supported versions are verified only if retained by XIVLauncher.
-        var availableBossmodVersions = new[] { "7.5.8.6", "7.5.8.7", "7.5.8.8", "7.5.8.9" }
-            .Where(version => File.Exists(Path.Combine(installed, "BossModReborn", version, "BossModReborn.dll"))).ToArray();
-        if (!availableBossmodVersions.Contains("7.5.8.9"))
-            throw new Exception("BossMod Reborn 7.5.8.9 installation not found: update BossMod Reborn in Dalamud first.");
-        foreach (var version in availableBossmodVersions)
+        // Use the same explicit targets as the installed compatibility/behavior guard tests.
+        foreach (var version in versions)
         CheckAssembly(Path.Combine(installed, "BossModReborn", version, "BossModReborn.dll"), version, md =>
         {
             var manager = Find(md, "BossMod.BossModuleManager");
@@ -95,7 +91,7 @@ internal static class ContractTests
                     if (md.GetString(md.GetMethodDefinition(mh).Name) is "DrawArenaForeground" or "DrawArenaBackground" or "AddHints" or "AddAIHints") throw new Exception("Bridge-provided drawing/hint callback remains");
             }
         });
-        Console.WriteLine("PASS 6/10: installed BossMod " + string.Join(", ", availableBossmodVersions) + " contracts, simulation lock lifecycle members; release has no custom guidance callbacks");
+        Console.WriteLine("PASS 6/10: installed BossMod " + string.Join(", ", versions) + " contracts, simulation lock lifecycle members; release has no custom guidance callbacks");
     }
     private static void CheckAssembly(string path, string version, Action<MetadataReader> check)
     {
