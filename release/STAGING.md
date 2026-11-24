@@ -26,16 +26,21 @@ This is a **private release-preparation branch**, not a published release.
 - [x] Correct remaining hardcoded historical target in group 6; both groups 6 and 10 share selected versions. Add ValidateOnly DLL prerequisite.
 - [x] Clean corrected checkout `0b011fb` passed all 10 offline groups and all 11 installed compatibility groups on BossMod 7.5.8.10 / AnoMech 0.5.1.0; all three generated plugin files match the original tested package by SHA-256.
 - [x] Stage private distribution preparation script, source allowlist, source index, and inactive repository JSON template.
-- [ ] Execute packaging script on Windows; inspect and verify generated archives and local feed; validate installation, config persistence, update and rollback before launch.
+- [x] Packaging executed on Windows from `555da8f`; all three payload hashes, both archive entry lists and four output checksums verified. Source archive matches that staging tree.
+- [x] Private loopback repository, installer-based loading, enable preference persistence, Diamond Dust smoke test and same-version uninstall/reinstall passed.
+- [x] Owner accepted one unreproduced Diamond Dust assignment mismatch as a documented experimental-beta limitation, not a resolved bug. Record in COMPATIBILITY.md and VERIFICATION.md; keep on development backlog.
+- [ ] Regenerate final documentation/source assets after staging edits; recheck package integrity and final source snapshot.
+- [ ] Actual version-to-version update/rollback has not been tested; defer to a separately versioned compatible build. Do not claim same-version reinstall as an update.
 - [ ] Finalize all required corresponding-source access and notices before distributing publicly.
 - [x] Verify new source commit uses azazev GitHub noreply identity.
 - [x] Initial reachable main/staging history audit: 14 commits, 55 file changes; no obvious credential, personal path or private email patterns in retrieved complete patches. Verified author identities and initial automated GitHub committer; scanned original DLL printable strings.
 - [ ] Final history/ref, PR discussion and release asset privacy audit after remaining edits (tags endpoint not accessible in current connector).
-- [ ] Confirm custom repository `repo.json` URLs and updates with a live install.
+- [x] Confirmed Dalamud recognizes loopback custom repository and installs verified ZIP.
+- [ ] Verify anonymous public HTTPS feed and installer asset downloads after explicit public-release approval; do not advertise before verification.
 - [ ] Receive explicit approval to make this repository or a release public.
 
 The original DLL retains the internal name `AnoBossBridge` to preserve configuration identity. Do not rename DLL/manifest/deps files independently.
 
-Build and package-file integrity gate passed for the documented Windows environment. Historical BossMod 7.5.8.9 was not retested in this run. Distribution and provenance gates remain OPEN. No runtime source or release DLL changes.
+Build, package-file integrity and private distribution validation passed for the documented Windows environment. Historical BossMod 7.5.8.9 was not retested. The intermittent Diamond Dust observation remains unresolved and accepted for the experimental beta by the owner. Final corresponding-source compliance, final asset/privacy review, public feed verification and explicit approvals remain open. No runtime source or release DLL changes.
 
 No root `repo.json`, public release, or tag is active yet. The draft template in release/ is not a live feed; generated packages must remain private pending review.

@@ -18,7 +18,7 @@ Outputs:
 - repo.local.json — loopback-only feed for private testing.
 - SHA256SUMS.txt — generated archive and feed hashes.
 
-Do not distribute these draft files publicly until the provenance, corresponding-source and privacy gates are closed. Packaging script and feed are staged, not yet executed in a Windows environment. No GitHub Release or live repository exists.
+Do not distribute these draft files publicly until the provenance, corresponding-source and privacy gates are closed. Packaging succeeded on Windows at 555da8f; private assets and local feed passed inspection and installation tests. See VERIFICATION.md for the historical draft hashes and results. Final archives must be regenerated after documentation changes. No GitHub Release or public live repository exists.
 
 ## Proposed custom repository entry
 
@@ -41,11 +41,11 @@ If a local Python 3 installation is already available, the draft feed can be ser
 
     python -m http.server 8765 --bind 127.0.0.1 --directory .\release-output
 
-In a second window, check http://127.0.0.1:8765/repo.local.json and latest.zip. Whether the current Dalamud client accepts loopback HTTP must be tested; if not, stop and use the existing manual development-plugin verification route rather than exposing a private feed publicly or weakening security settings.
+In a second window, check http://127.0.0.1:8765/repo.local.json and latest.zip. Loopback HTTP was accepted by the tested client on November 24, 2026. Other client versions or configurations may differ; if rejected, stop and use the existing manual development-plugin verification route rather than exposing a private feed publicly or weakening security settings.
 
 Before installer testing, back up the existing SimBridge configuration and disable/remove its development-plugin registration; never run two copies with the same internal identity. Add the loopback repo only if accepted, install SimBridge, check /simbridge and /simbridge status, verify enable/disable preference and clean reload, and start one fresh supported simulation. Test uninstall/reinstall and persistence with backups. Stop the server and remove the temporary custom repo afterward. Do not change upstream versions solely for this test.
 
-A same-version reinstall is not a new-version update or rollback test. Use a separately validated later version for a real update test; prior v0.7.3 is not a valid rollback target for BossMod 7.5.8.10.
+The owner confirmed installation, preference persistence, Diamond Dust functional smoke testing and same-version reinstall. One intermittent Diamond Dust assignment discrepancy remains documented in COMPATIBILITY.md, accepted as an experimental-beta limitation; no runtime fix claimed. A same-version reinstall is not a new-version update or rollback test. Use a separately validated later version for a real update test; prior v0.7.3 is not a valid rollback target for BossMod 7.5.8.10.
 
 ## Before public activation
 

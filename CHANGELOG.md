@@ -24,7 +24,9 @@ Eight FRU simulation integrations: Diamond Dust, Light Rampant, Ultimate Relativ
 
 - Ten focused offline test groups passed.
 - Live lifecycle and recovery validation completed on BossMod Reborn **7.5.8.10**, AnoMech **0.5.1.0**, Dalamud API **15**.
-- Full role/strategy coverage, particularly Crystallize Time and Paradise Regained, is **not** claimed.
+- Private custom-repository delivery, installer-based loading, configuration persistence and same-version uninstall/reinstall passed on the tested Windows client.
+- Diamond Dust smoke testing passed for the tested attempts; one intermittent AOE-versus-cone-bait mismatch was observed and was not reproduced in two subsequent attempts. The cause remains unresolved. See [COMPATIBILITY.md](COMPATIBILITY.md).
+- Full role/strategy coverage, particularly Crystallize Time and Paradise Regained, is **not** claimed. A deliberately failed attempt was counted as a functional/lifecycle test, not a successful mechanic clear.
 
 ### Packaging
 

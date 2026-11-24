@@ -27,3 +27,35 @@ The original development archive was independently checked: SHA-256 `6b464968bd7
 The runtime DLL is byte-identical to the previously live-tested v0.8.0 baseline. The clean checkout therefore demonstrated a matching rebuild in this environment, not fresh gameplay coverage, arbitrary future dependency compatibility, or a cross-platform reproducible build. Documentation/license files added after the tested commit do not change runtime source.
 
 Release ZIP layout, license/corresponding-source inclusion, repository feed, installation/update/rollback and final publication approval are separate gates.
+
+## Private distribution and installation validation — 2026-11-24
+
+Tested distribution checkout: `555da8fd7d21a83441af5217daf2e147859f000d`. The owner rebuilt it on the same Windows/dependency environment: no compiler warnings, all 10 offline test groups passed, all 11 installed compatibility groups passed (53 ms). The packaging script verified all three original payload hashes, manifest identity and both ZIP entry lists.
+
+The uploaded draft assets were independently inspected during the release review; their four reported SHA-256 values matched, archive CRCs and payload hashes passed, and the 49-file source tree matched the tested distribution commit. The binary ZIP contained the three original plugin files, full license, third-party notices, upstream BSD license and source access index.
+
+| Draft asset | Bytes | SHA-256 |
+| --- | ---: | --- |
+| latest.zip | 68859 | ff9c5b2bab5d205f357a94ac1837d069d64475ee9eae7db2a0251e6a9ed6ee3c |
+| repo.json | 1039 | 78a606753a79c910d9542ce7cc14700e2381aa0f9fe8fe2d212086d60b633585 |
+| repo.local.json | 1122 | 58b40c618e9969f8fc03a5cbdb24a0c23bef57443616f94d16d7754087b389d8 |
+| SimBridge-v0.8.0-beta.1-source.zip | 109735 | c7ea1935b6246c7403a12f437a45b8a48af142208f555cb2695df91e5cfcac37 |
+
+These are **historical private test asset hashes**, not final public release asset hashes. Regenerate the final archives from the approved source snapshot after documentation/notice changes and record their new checksums.
+
+| Private client test | Result |
+| --- | --- |
+| Loopback HTTP server and repository discovery | Passed; feed returned HTTP 200, Dalamud recognized the single entry |
+| Installer display | Correct name, author, assembly version and description; default icon |
+| Installer-based install/load | Passed; commands and idle armed status available |
+| Configuration persistence | Passed; disabled bridge preference remained unchecked after plugin disable/re-enable |
+| Diamond Dust M2, NA Partner Swap smoke test | Owner reports full clear and functional BossMod module |
+| Same-version uninstall/reinstall | Passed for installation and plugin loading |
+| First post-reinstall Diamond Dust observation | Owner reported marked AOE player receiving cone-bait indication; unresolved |
+| Two subsequent Diamond Dust attempts after another reinstall | Earlier mismatch not reproduced; owner reports guidance functional. One attempt completed, the other was deliberately failed by the owner. Count both as functional tests, not two mechanic clears. |
+| Cleanup | Diagnostic review reported module cleanup after the recorded attempts |
+| Genuine version-to-version update/rollback | Not performed |
+
+The owner explicitly accepted the isolated, unreproduced mismatch as an experimental-beta backlog item on November 24. This is not evidence that reinstalling fixes it, that both marker variations were explicitly tested, or that all guidance is correct. Do not claim a runtime fix. Raw diagnostics and screenshots are excluded for privacy.
+
+Private distribution validation is complete in the tested environment. Public delivery and licensing gates remain open.

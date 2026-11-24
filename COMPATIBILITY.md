@@ -35,6 +35,7 @@ BossMod's existing module decides what guidance is available. SimBridge does not
 
 ## Known limitations
 
+- **Diamond Dust:** one intermittent Frigid Stone AOE-versus-cone-bait guidance mismatch was observed during private installer testing (M2, NA · Partner Swap). It was not reproduced in two subsequent attempts after reinstalling. The cause is unconfirmed; reinstalling is not an established fix. Diagnostics did not capture sufficient per-target assignment detail to rule out a synchronization edge case. Follow the simulation's actual markers when guidance disagrees and report the variation. This remains an experimental-beta investigation item.
 - **Crystallize Time:** tested combinations include selected Red Ice and Blue Darkness cases, but full role/debuff coverage and complete NAUR strategy parity remain unverified. An accepted rewind-position discrepancy exists. No additional markers are inserted to compensate.
 - **Paradise Regained:** limited in-game validation; full variation coverage is unverified.
 - **Other supported encounters:** selected configurations have been tested, but no exhaustive role/strategy certification is implied.
