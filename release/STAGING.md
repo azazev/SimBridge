@@ -14,14 +14,19 @@ This is a **private release-preparation branch**, not a published release.
 
 - [x] Owner approved the private-staging documentation drafts.
 - [x] Stage all 29 source/test/tooling files and verify exact Git blob hashes against the validated source preview.
-- [ ] Complete independent source-level licensing, provenance and code review.
-- [ ] Review upstream licensing, code provenance, and third-party notices; choose appropriate license.
-- [ ] Verify release packaging, metadata, configuration persistence and new-user installation.
+- [ ] Resolve whether the bridge's tight reflection integration or copied/adapted expressions trigger AnoMech AGPL obligations; initial static review is inconclusive.
+- [x] Confirm upstream repository license texts: AnoMech AGPL-3.0 and BossMod Reborn BSD-3-Clause.
+- [ ] Finalize copyright/provenance review, choose the SimBridge license, and add required notices before public visibility.
+- [x] Stage verified original plugin/AnoBossBridge.json and plugin/AnoBossBridge.deps.json text metadata; preserve internal identity.
+- [ ] Repair/verify portable build instructions: current PowerShell scripts pin .NET 10.0.100, reference installed Dalamud DLLs and need local upstream installs.
+- [ ] Confirm clean build, release packaging, configuration persistence and new-user installation.
 - [x] Verify new source commit uses azazev GitHub noreply identity.
 - [ ] Audit complete Git history and release files before public visibility.
 - [ ] Confirm custom repository `repo.json` URLs and updates with a live install.
 - [ ] Receive explicit approval to make this repository or a release public.
 
 The original DLL retains the internal name `AnoBossBridge` to preserve configuration identity. Do not rename DLL/manifest/deps files independently.
+
+Build gate is still OPEN: this review environment cannot run Windows PowerShell/.NET/Dalamud; no clean-machine build was claimed.
 
 No `repo.json`, public release, or tag is active yet.
