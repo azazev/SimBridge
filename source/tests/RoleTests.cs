@@ -187,7 +187,7 @@ NativeLightRampantTests.Run();
 ContractTests.Run();
 SimulationGateTests.Run();
 ResilienceTests.Run();
-InstalledCompatibilityTests.Run();
+InstalledCompatibilityTests.Run(args);
 Console.WriteLine("Core regression and resilience groups passed.");
 
 

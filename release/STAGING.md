@@ -18,7 +18,8 @@ This is a **private release-preparation branch**, not a published release.
 - [x] Confirm upstream repository license texts: AnoMech AGPL-3.0 and BossMod Reborn BSD-3-Clause.
 - [ ] Finalize copyright/provenance review, choose the SimBridge license, and add required notices before public visibility.
 - [x] Stage verified original plugin/AnoBossBridge.json and plugin/AnoBossBridge.deps.json text metadata; preserve internal identity.
-- [ ] Repair/verify portable build instructions: current PowerShell scripts pin .NET 10.0.100, reference installed Dalamud DLLs and need local upstream installs.
+- [x] Add documented build-only, validation-only and explicit BossMod target options; preserve default historical .9/.10 validation.
+- [ ] Verify revised tooling on Windows using the installed 7.5.8.10 target; clean compilation and offline validation have not yet been rerun.
 - [ ] Confirm clean build, release packaging, configuration persistence and new-user installation.
 - [x] Verify new source commit uses azazev GitHub noreply identity.
 - [ ] Audit complete Git history and release files before public visibility.
@@ -27,6 +28,6 @@ This is a **private release-preparation branch**, not a published release.
 
 The original DLL retains the internal name `AnoBossBridge` to preserve configuration identity. Do not rename DLL/manifest/deps files independently.
 
-Build gate is still OPEN: this review environment cannot run Windows PowerShell/.NET/Dalamud; no clean-machine build was claimed.
+Build gate is still OPEN: the owner's environment checks found all pinned prerequisites except historical BossMod 7.5.8.9. The revised tooling is statically reviewed only, pending a clean-checkout build and selected-target validation. No runtime source or release DLL changes.
 
 No `repo.json`, public release, or tag is active yet.
