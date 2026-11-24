@@ -12,11 +12,13 @@ This is a **private release-preparation branch**, not a published release.
 
 ## Before public release
 
-- [ ] Review and approve documentation.
-- [ ] Upload and audit the exact validated source tree and build tooling.
+- [x] Owner approved the private-staging documentation drafts.
+- [x] Stage all 29 source/test/tooling files and verify exact Git blob hashes against the validated source preview.
+- [ ] Complete independent source-level licensing, provenance and code review.
 - [ ] Review upstream licensing, code provenance, and third-party notices; choose appropriate license.
 - [ ] Verify release packaging, metadata, configuration persistence and new-user installation.
-- [ ] Verify Git commit authorship and remove private information from public history.
+- [x] Verify new source commit uses azazev GitHub noreply identity.
+- [ ] Audit complete Git history and release files before public visibility.
 - [ ] Confirm custom repository `repo.json` URLs and updates with a live install.
 - [ ] Receive explicit approval to make this repository or a release public.
 
