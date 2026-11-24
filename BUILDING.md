@@ -1,6 +1,6 @@
 # Building and validating SimBridge
 
-Private beta preparation; this guide has not yet been verified in a clean Windows checkout.
+The pinned Windows build has been verified from clean GitHub checkout `0b011fb8bd1333154637ae0a422d2e80013bfb48` on November 24, 2026. All ten offline groups and eleven installed compatibility groups passed with BossMod Reborn 7.5.8.10 and AnoMech 0.5.1.0. The DLL and two metadata files matched the tested development package by SHA-256. See [release/VERIFICATION.md](release/VERIFICATION.md). This is one verified environment, not a claim of universal reproducibility.
 
 The existing direct Roslyn build pins .NET SDK 10.0.100, .NET reference pack 10.0.0 and Dalamud API 15. It preserves the tested runtime source, compile arguments, resource name and internal AnoBossBridge identity. No upstream binaries are bundled. This is a Windows/local-Dalamud build path, not a general cross-platform or hermetic build.
 

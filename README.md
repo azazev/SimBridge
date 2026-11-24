@@ -62,6 +62,16 @@ AI-assisted tools were used to help develop and document SimBridge under human d
 
 SimBridge is an **independent compatibility project**, not an official extension of AnoMech or BossMod Reborn. Thanks to the maintainers and contributors of both upstream projects.
 
-All plugin functionality is intended to remain free. See [Third-party attribution notes](THIRD_PARTY_NOTICES.md). Licensing and any additional required notices are still under review **before public release**.
+## License
+
+SimBridge's own copyrightable contributions, to the extent the project has the rights to license them, are offered under the **GNU Affero General Public License, version 3 or (at your option) any later version** (SPDX: AGPL-3.0-or-later). See [LICENSE](LICENSE). Third-party components retain their applicable licenses and copyright notices; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). SimBridge is provided without warranty as described in the license.
+
+For source build instructions, see [BUILDING.md](BUILDING.md). The verified Windows build and file checksums are documented in [release/VERIFICATION.md](release/VERIFICATION.md).
+
+## Support
+
+All SimBridge features are free. If you would like to support development, optional donations are welcome on [Ko-fi](https://ko-fi.com/azazev). Donations are not required and do not unlock features or gameplay functionality.
+
+Public distribution is still pending final provenance, license-compliance and release review.
 
 For the proposed beta changes, see [CHANGELOG.md](CHANGELOG.md).

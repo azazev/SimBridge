@@ -1,19 +1,19 @@
-# Third-party projects and licensing review
+# Third-party notices
 
-> **Draft for private staging.** This is not a license file. Attribution and license compliance must be reviewed before SimBridge's source or binary becomes public.
+SimBridge is an independent compatibility project by azazev. It is not endorsed by or officially affiliated with the projects below. The SimBridge license applies to SimBridge's own contributions; it does not relicense upstream components.
 
-## Upstream dependencies
+## Upstream projects
 
-- [AnoMech](https://github.com/anomek/AnoMech) — FFXIV mechanics simulator, credited to its maintainers and contributors. Its upstream repository identifies an AGPL-3.0-family license.
-- [BossMod Reborn](https://github.com/FFXIV-CombatReborn/BossmodReborn) — encounter modules and mechanic guidance, credited to its maintainers and contributors. Its upstream repository identifies BSD-3-Clause licensing.
+- [AnoMech](https://github.com/anomek/AnoMech) — FFXIV mechanics simulator; credit to its maintainers and contributors. GNU Affero General Public License version 3: [upstream license](https://github.com/anomek/AnoMech/blob/1646a7068c2071a3d1fd9e3c84550dfd3f1b6ade/LICENSE.md). The complete AGPLv3 text is included in [LICENSE](LICENSE).
+- [BossMod Reborn](https://github.com/FFXIV-CombatReborn/BossmodReborn) — encounter modules and mechanic guidance; credit to Andrew Gilewsky and upstream maintainers and contributors. BSD 3-Clause License, copyright (c) 2022-2024, Andrew Gilewsky. Full unchanged text: [LICENSES/BossModReborn-BSD-3-Clause.txt](LICENSES/BossModReborn-BSD-3-Clause.txt); [upstream license](https://github.com/FFXIV-CombatReborn/BossmodReborn/blob/35a908ad71b1a94fdbf342518ed78c7c72c458c0/LICENSE).
+- [Dalamud](https://github.com/goatcorp/Dalamud) — plugin framework/API; upstream repository identifies AGPL-3.0. See its [license](https://github.com/goatcorp/Dalamud/blob/master/LICENSE).
+- [Dalamud.NET.Sdk](https://github.com/goatcorp/Dalamud.NET.Sdk) — optional standard project build SDK; upstream repository identifies MIT. See its [license](https://github.com/goatcorp/Dalamud.NET.Sdk/blob/master/LICENSE.txt).
+- [Lumina](https://github.com/NotAdam/Lumina) — locally referenced framework dependency; upstream repository identifies WTFPL. See its upstream repository for applicable license and notices.
 
-SimBridge is a separate community compatibility project by **azazev**. It is not endorsed by or officially affiliated with either dependency.
+## Distribution scope
 
-## Before public distribution
+The verified baseline contains only SimBridge's DLL, manifest and dependency metadata in the plugin directory; upstream DLLs and assets are not bundled. Reflection contracts contain upstream identifiers, member shapes and method fingerprints; they do not package the upstream assemblies. The original source snapshots consulted are documented in [release/PROVENANCE.md](release/PROVENANCE.md), not claimed as exact matches for all installed dependency binaries.
 
-- Determine whether any SimBridge code reproduces or derives from upstream code and what license conditions apply.
-- Preserve attribution, copyright notices and any licenses required for redistributed components.
-- Confirm whether release archives include any upstream binaries, code, or assets; the reviewed v0.8.0 development package did not bundle upstream plugin DLLs.
-- Select and publish the appropriate SimBridge license and final third-party notices **before the repository becomes public**.
+The license texts and attributions above are included conservatively. A dependency-only arrangement is not a determination of independent-work status under AGPL. Before publication, resolve any additional copyright notices, applicable licenses and corresponding-source requirements for the precise distributed work and dependency versions. Do not imply upstream endorsement.
 
-Do not interpret this draft as granting permission to reuse the code or as a final legal conclusion.
+See [release/PROVENANCE.md](release/PROVENANCE.md) for the remaining review.
