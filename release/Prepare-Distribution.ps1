@@ -8,7 +8,7 @@ $root = Split-Path -Parent $PSScriptRoot
 if (-not $PluginDirectory) { $PluginDirectory = Join-Path $root 'plugin' }
 if (-not $OutputDirectory) { $OutputDirectory = Join-Path $root 'release-output' }
 $plugin = (Resolve-Path -LiteralPath $PluginDirectory).ProviderPath
-$out = [IO.Path]::GetFullPath($OutputDirectory)
+$out = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($OutputDirectory)
 if (Test-Path -LiteralPath $out) { throw 'Output directory already exists; use a new -OutputDirectory.' }
 $expected = [ordered]@{
     'AnoBossBridge.dll' = '2ee6b505d985121a8c9f37c43eeec1b8ce32c36b909fa0a3710d8eff39aa5993'
@@ -59,7 +59,9 @@ function Verify-ZipEntries([string]$ZipPath, [string[]]$ExpectedFiles, [bool]$Ve
         }
     } finally { $zip.Dispose() }
 }
-$temp = Join-Path ([IO.Path]::GetTempPath()) ('SimBridge-stage-' + [Guid]::NewGuid().ToString('N'))
+$parent = Split-Path -Parent $out
+New-Item -ItemType Directory -Path $parent -Force | Out-Null
+$temp = Join-Path $parent ('SimBridge-stage-' + [Guid]::NewGuid().ToString('N'))
 try {
     $binaryStage = Join-Path $temp 'binary'
     $sourceStage = Join-Path $temp 'source'
@@ -76,7 +78,7 @@ try {
     [IO.Compression.ZipFile]::CreateFromDirectory($sourceStage,$sourceZip,[IO.Compression.CompressionLevel]::Optimal,$false)
     Verify-ZipEntries $binaryZip (@($expected.Keys) + $noticeFiles + @('SOURCE.md')) $true
     Verify-ZipEntries $sourceZip $sourceFiles $false
-    $utf8 = New-Object System.Text.UTF8Encoding($false)
+    $utf8 = [System.Text.UTF8Encoding]::new($false)
     # Planned feed is intentionally not active, and LastUpdate is stamped only at publication.
     [IO.File]::WriteAllText((Join-Path $result 'repo.json'),(ConvertTo-Json -InputObject @($entry) -Depth 10),$utf8)
     $entry.DownloadLinkInstall = "http://127.0.0.1:$LocalTestPort/latest.zip"
@@ -87,7 +89,7 @@ try {
         "$((Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant())  $($_.Name)"
     })
     [IO.File]::WriteAllLines((Join-Path $result 'SHA256SUMS.txt'),[string[]]$checksums,$utf8)
-    New-Item -ItemType Directory -Path (Split-Path -Parent $out) -Force | Out-Null
+    if (Test-Path -LiteralPath $out) { throw 'Output directory appeared during packaging; choose a new output directory.' }
     Move-Item -LiteralPath $result -Destination $out
     Write-Output 'PASS: all three original plugin payload hashes, manifest identity and ZIP entry lists verified.'
     Get-ChildItem -LiteralPath $out -File | Select-Object Name,Length
