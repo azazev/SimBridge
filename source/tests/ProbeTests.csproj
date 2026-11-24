@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="RoleTests.cs;NewMechanicTests.cs;NativeDiamondTests.cs;NativeTwinTests.cs;NativeLightRampantTests.cs;ContractTests.cs;SimulationGateTests.cs;ResilienceTests.cs;InstalledCompatibilityTests.cs" />
+    <Compile Include="../*.cs" Exclude="../Plugin.cs" />
+    <EmbeddedResource Include="../Contracts.json" LogicalName="SimBridge.Contracts.json" />
+  </ItemGroup>
+</Project>
