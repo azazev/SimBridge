@@ -10,7 +10,7 @@ SimBridge is an independent compatibility project by azazev. It is not endorsed 
 - [Dalamud.NET.Sdk](https://github.com/goatcorp/Dalamud.NET.Sdk) — optional standard project build SDK; upstream repository identifies MIT. See its [license](https://github.com/goatcorp/Dalamud.NET.Sdk/blob/master/LICENSE.txt).
 - [Lumina](https://github.com/NotAdam/Lumina) — locally referenced framework dependency; WTFPL version 2, verified at the source revision reported by the local 7.7.0 build. See its [license](https://github.com/NotAdam/Lumina/blob/b92c0cbdb65c9e53b0ec5faafa83b2cc32aa9a7c/LICENSE). No Lumina binary is bundled.
 
-BossMod Reborn's [third-party notices at release 7.5.8.10](https://github.com/FFXIV-CombatReborn/BossmodReborn/blob/05bdf3abd1963c84105784273a8c171bb7cf0b7c/THIRD_PARTY_NOTICES.md) identify KamiToolKit (MIT) and RebornMaterial (LGPL-3.0-or-later). Those assemblies and overlay assets are not included in the verified SimBridge plugin payload. Any corresponding-source obligations extending to upstream components remain under review.
+BossMod Reborn's [third-party notices at release 7.5.8.10](https://github.com/FFXIV-CombatReborn/BossmodReborn/blob/05bdf3abd1963c84105784273a8c171bb7cf0b7c/THIRD_PARTY_NOTICES.md) identify KamiToolKit (MIT) and RebornMaterial (LGPL-3.0-or-later). Those assemblies and overlay assets are not included in the verified SimBridge plugin payload. See the release-specific source scope assessment and qualifications in [release/SOURCE.md](release/SOURCE.md).
 
 ## Additional pinned dependency references
 
@@ -30,6 +30,6 @@ These are upstream dependencies of the separately installed plugins, not binarie
 
 The verified baseline contains only SimBridge's DLL, manifest and dependency metadata in the plugin directory; upstream DLLs and assets are not bundled. Reflection contracts contain upstream identifiers, member shapes and method fingerprints; they do not package the upstream assemblies. The original source snapshots and resolved published release tags are documented in [release/PROVENANCE.md](release/PROVENANCE.md). See [release/SOURCE.md](release/SOURCE.md) for the planned corresponding-source index. These are not claimed as cryptographic matches for every installed dependency binary.
 
-The license texts and attributions above are included conservatively. A dependency-only arrangement is not a determination of independent-work status under AGPL. Before publication, resolve any additional copyright notices, applicable licenses and corresponding-source requirements for the precise distributed work and dependency versions. Do not imply upstream endorsement.
+The license texts and attributions above are included conservatively. A dependency-only arrangement is not a determination of independent-work status under AGPL. The supplemental dependency index in [release/SOURCE.md](release/SOURCE.md) provides pinned links and license identifiers for the reviewed indirect dependencies, including LGPL and Apache-2.0 packages. These packages are not shipped as binaries by SimBridge; the original upstream license/notice files remain with their source. The complete scope and source-access obligations must be satisfied before binary publication. Do not imply upstream endorsement.
 
 See [release/PROVENANCE.md](release/PROVENANCE.md) for the remaining review.
