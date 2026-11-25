@@ -1,0 +1,16 @@
+<Project Sdk="Dalamud.NET.Sdk/15.0.0">
+  <PropertyGroup>
+    <Version>0.8.0.0</Version>
+    <Author>azazev</Author>
+    <Name>SimBridge</Name>
+    <Punchline>Experimental AnoMech encounter activation for BossmodReborn.</Punchline>
+    <Description>Experimental AnoMech to BossmodReborn bridge. FRU P2-P5 simulation activation, existing role mapping.</Description>
+    <Tags>diagnostics;simulation</Tags>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="tests/**/*.cs" />
+    <EmbeddedResource Include="Contracts.json" LogicalName="SimBridge.Contracts.json" />
+  </ItemGroup>
+</Project>
+

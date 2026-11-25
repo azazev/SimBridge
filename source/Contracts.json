@@ -1,0 +1,2551 @@
+{
+  "Groups": {
+    "Discovery": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Plugin",
+        "Members": [
+          {
+            "Name": "Game",
+            "Shapes": [
+              "P:AnoMech.Core.Game.Game:Assembly, Static, HideBySig, SpecialName:Private, Static, HideBySig, SpecialName:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Plugin",
+        "Members": [
+          {
+            "Name": "_bossmod",
+            "Shapes": [
+              "F:BossMod.BossModuleManager:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_ws",
+            "Shapes": [
+              "F:BossMod.WorldState:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      }
+    ],
+    "SimulationLock": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.Game.Game",
+        "Members": [
+          {
+            "Name": "ActiveScenario",
+            "Shapes": [
+              "P:AnoMech.Scenarios.IScenario:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Status",
+            "Shapes": [
+              "P:AnoMech.Core.Game.SessionStatus:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "World",
+            "Shapes": [
+              "P:AnoMech.Core.SimObjects.SimWorld:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_ActiveScenario",
+            "Shapes": [
+              "M:Public, HideBySig, SpecialName:0:AnoMech.Scenarios.IScenario()"
+            ],
+            "Bodies": [
+              "DFAD73F2CCFCD2B053309E00EA29B6A56DE45DFDD346E960B3D7448C4728981E"
+            ]
+          },
+          {
+            "Name": "get_Status",
+            "Shapes": [
+              "M:Public, HideBySig, SpecialName:0:AnoMech.Core.Game.SessionStatus()"
+            ],
+            "Bodies": [
+              "217E404AF03DB9F62DBA25E85646FC3AC2E99B253D0FD38380411F76CC47C74F"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.Game.SessionStatus",
+        "Members": [
+          {
+            "Name": "Offline",
+            "Shapes": [
+              "F:AnoMech.Core.Game.SessionStatus:Public, Static, Literal, HasDefault:0"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "InZone",
+            "Shapes": [
+              "F:AnoMech.Core.Game.SessionStatus:Public, Static, Literal, HasDefault:1"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Running",
+            "Shapes": [
+              "F:AnoMech.Core.Game.SessionStatus:Public, Static, Literal, HasDefault:2"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "RunningWithMistake",
+            "Shapes": [
+              "F:AnoMech.Core.Game.SessionStatus:Public, Static, Literal, HasDefault:3"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Failed",
+            "Shapes": [
+              "F:AnoMech.Core.Game.SessionStatus:Public, Static, Literal, HasDefault:4"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Frozen",
+            "Shapes": [
+              "F:AnoMech.Core.Game.SessionStatus:Public, Static, Literal, HasDefault:5"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "CompletedWithMistake",
+            "Shapes": [
+              "F:AnoMech.Core.Game.SessionStatus:Public, Static, Literal, HasDefault:6"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Succeeded",
+            "Shapes": [
+              "F:AnoMech.Core.Game.SessionStatus:Public, Static, Literal, HasDefault:7"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.SimObjects.SimWorld",
+        "Members": [
+          {
+            "Name": "Children",
+            "Shapes": [
+              "P:System.Collections.Generic.IEnumerable\u00601\u003CAnoMech.Core.SimObjects.ISimObject\u003E:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.SimObjects.SimEnemy",
+        "Members": [
+          {
+            "Name": "EntityId",
+            "Shapes": [
+              "P:System.UInt32:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "BNpcBaseId",
+            "Shapes": [
+              "P:System.UInt32:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_EntityId",
+            "Shapes": [
+              "M:Public, HideBySig, SpecialName:0:System.UInt32()"
+            ],
+            "Bodies": [
+              "C14F2F9D858F9743BA43B7013EBE8CD4CA77DC97B613E51E73D6944FCC1FC27C"
+            ]
+          },
+          {
+            "Name": "get_BNpcBaseId",
+            "Shapes": [
+              "M:Public, HideBySig, SpecialName:0:System.UInt32()"
+            ],
+            "Bodies": [
+              "47336410B293A464157AC0FF5CF97C1D758BA6456DB3132853255855F420DF6A"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.WorldState",
+        "Members": [
+          {
+            "Name": "Modified",
+            "Shapes": [
+              "F:BossMod.Event\u00601\u003CBossMod.WorldState\u002BOperation\u003E:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Actors",
+            "Shapes": [
+              "F:BossMod.ActorState:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Execute",
+            "Shapes": [
+              "M:Public, HideBySig:0:System.Void(BossMod.WorldState\u002BOperation)"
+            ],
+            "Bodies": [
+              "240B456EA709161DF0F0BFDEB942FD9A281D2B938C750512796B2DC84BB44903"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.BossModuleManager",
+        "Members": [
+          {
+            "Name": "LoadedModules",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CBossMod.BossModule\u003E:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "PendingModules",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CBossMod.BossModule\u003E:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ModuleDeactivated",
+            "Shapes": [
+              "F:BossMod.Event\u00601\u003CBossMod.BossModule\u003E:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ActiveModule",
+            "Shapes": [
+              "P:BossMod.BossModule:Public, HideBySig, SpecialName:Public, HideBySig, SpecialName:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "UnloadModule",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.Int32)"
+            ],
+            "Bodies": [
+              "16F393D11B489A46D15AE6A0FCF232FA480C2981CF8B3421A3413E57F2EC3010"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.BossModule",
+        "Members": [
+          {
+            "Name": "PrimaryActor",
+            "Shapes": [
+              "F:BossMod.Actor:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "StateMachine",
+            "Shapes": [
+              "F:BossMod.StateMachine:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Dispose",
+            "Shapes": [
+              "M:Family, Virtual, HideBySig, VtableLayoutMask:0:System.Void(System.Boolean)",
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask:0:System.Void()"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.StateMachine",
+        "Members": [
+          {
+            "Name": "ActiveState",
+            "Shapes": [
+              "F:BossMod.StateMachine\u002BState:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Actor",
+        "Members": [
+          {
+            "Name": "InstanceID",
+            "Shapes": [
+              "F:System.UInt64:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "OID",
+            "Shapes": [
+              "F:System.UInt32:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Event\u00601",
+        "Members": [
+          {
+            "Name": "Subscribe",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.EventSubscription(System.Action\u00601\u003C!0\u003E)"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Fire",
+            "Shapes": [
+              "M:Public, HideBySig:0:System.Void(!0)"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.WorldState\u002BOpFrameStart",
+        "Members": []
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.WorldState\u002BOpZoneChange",
+        "Members": []
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.ActorState\u002BOpCreate",
+        "Members": []
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.ActorState\u002BOpDestroy",
+        "Members": []
+      }
+    ],
+    "Activation": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.Game.Game",
+        "Members": [
+          {
+            "Name": "ActiveScenario",
+            "Shapes": [
+              "P:AnoMech.Scenarios.IScenario:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Paused",
+            "Shapes": [
+              "P:System.Boolean:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "EventTimeScale",
+            "Shapes": [
+              "P:System.Single:Public, HideBySig, SpecialName:Public, HideBySig, SpecialName:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Events",
+            "Shapes": [
+              "P:AnoMech.Core.Game.EventScheduler:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "run",
+            "Shapes": [
+              "F:AnoMech.Core.Game.ScenarioSession:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "World",
+            "Shapes": [
+              "P:AnoMech.Core.SimObjects.SimWorld:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.Game.EventScheduler",
+        "Members": [
+          {
+            "Name": "Elapsed",
+            "Shapes": [
+              "P:System.Single:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_Elapsed",
+            "Shapes": [
+              "M:Public, HideBySig, SpecialName:0:System.Single()"
+            ],
+            "Bodies": [
+              "AABF170B1DC25638BDA63F1B29A29AF8C38EB7862429FCE6F24BA5DBBDB71A66"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.Game.ScenarioSession",
+        "Members": [
+          {
+            "Name": "run",
+            "Shapes": [
+              "F:AnoMech.Core.Game.RunScenarioParams:Private, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.Game.RunScenarioParams",
+        "Members": [
+          {
+            "Name": "SelectedAi",
+            "Shapes": [
+              "P:System.Nullable\u00601\u003CSystem.Int32\u003E:Public, HideBySig, SpecialName:Public, HideBySig, SpecialName:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.SimObjects.SimWorld",
+        "Members": [
+          {
+            "Name": "Party",
+            "Shapes": [
+              "P:AnoMech.Core.SimObjects.SimParty:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.SimObjects.SimParty",
+        "Members": [
+          {
+            "Name": "slots",
+            "Shapes": [
+              "F:AnoMech.Core.SimObjects.SimCharacter[]:Private, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "PlayerRole",
+            "Shapes": [
+              "P:AnoMech.Core.Game.Party.PartyRole:Public, HideBySig, SpecialName:Private, HideBySig, SpecialName:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.SimObjects.SimCharacter",
+        "Members": [
+          {
+            "Name": "EntityId",
+            "Shapes": [
+              "P:System.UInt32:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Core.Game.Party.PartyRole",
+        "Members": [
+          {
+            "Name": "MainTank",
+            "Shapes": [
+              "F:AnoMech.Core.Game.Party.PartyRole:Public, Static, Literal, HasDefault:0"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "OffTank",
+            "Shapes": [
+              "F:AnoMech.Core.Game.Party.PartyRole:Public, Static, Literal, HasDefault:1"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "RegenHealer",
+            "Shapes": [
+              "F:AnoMech.Core.Game.Party.PartyRole:Public, Static, Literal, HasDefault:2"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ShieldHealer",
+            "Shapes": [
+              "F:AnoMech.Core.Game.Party.PartyRole:Public, Static, Literal, HasDefault:3"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "MeleeDpsA",
+            "Shapes": [
+              "F:AnoMech.Core.Game.Party.PartyRole:Public, Static, Literal, HasDefault:4"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "MeleeDpsB",
+            "Shapes": [
+              "F:AnoMech.Core.Game.Party.PartyRole:Public, Static, Literal, HasDefault:5"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "PhysRangedDps",
+            "Shapes": [
+              "F:AnoMech.Core.Game.Party.PartyRole:Public, Static, Literal, HasDefault:6"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "CasterDps",
+            "Shapes": [
+              "F:AnoMech.Core.Game.Party.PartyRole:Public, Static, Literal, HasDefault:7"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Plugin",
+        "Members": [
+          {
+            "Name": "_ai",
+            "Shapes": [
+              "F:BossMod.AI.AIManager:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_rotation",
+            "Shapes": [
+              "F:BossMod.Autorotation.RotationModuleManager:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.AI.AIManager",
+        "Members": [
+          {
+            "Name": "Beh",
+            "Shapes": [
+              "F:BossMod.AI.AIBehaviour:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Autorotation.RotationModuleManager",
+        "Members": [
+          {
+            "Name": "Preset",
+            "Shapes": [
+              "P:BossMod.Autorotation.Preset:Public, HideBySig, SpecialName:Public, HideBySig, SpecialName:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ForceDisable",
+            "Shapes": [
+              "F:BossMod.Autorotation.Preset:Public, Static, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.BossModuleManager",
+        "Members": [
+          {
+            "Name": "_activeModuleOverridden",
+            "Shapes": [
+              "F:System.Boolean:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ActiveModule",
+            "Shapes": [
+              "P:BossMod.BossModule:Public, HideBySig, SpecialName:Public, HideBySig, SpecialName:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ModuleActivated",
+            "Shapes": [
+              "F:BossMod.Event\u00601\u003CBossMod.BossModule\u003E:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "LoadModule",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(BossMod.BossModule,System.Boolean)"
+            ],
+            "Bodies": [
+              "9D59B5B859DCA897D5BE279EFBCCC57559DBD8BFCB7722E994ECFB7136CC7636"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.WorldState",
+        "Members": [
+          {
+            "Name": "Party",
+            "Shapes": [
+              "F:BossMod.PartyState:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "CurrentTime",
+            "Shapes": [
+              "P:System.DateTime:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.PartyState",
+        "Members": [
+          {
+            "Name": "Members",
+            "Shapes": [
+              "F:BossMod.PartyState\u002BMember[]:Public, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.PartyState\u002BMember",
+        "Members": [
+          {
+            "Name": "InstanceId",
+            "Shapes": [
+              "F:System.UInt64:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ContentId",
+            "Shapes": [
+              "F:System.UInt64:Public, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRU",
+        "Members": [
+          {
+            "Name": ".ctor",
+            "Shapes": [
+              "M:Private, HideBySig, SpecialName, RTSpecialName:0:void(BossMod.WorldState,BossMod.Actor,System.ValueTuple\u00602\u003CBossMod.WPos,BossMod.ArenaBoundsCustom\u003E)",
+              "M:Private, Static, HideBySig, SpecialName, RTSpecialName:0:void()",
+              "M:Public, HideBySig, SpecialName, RTSpecialName:0:void(BossMod.WorldState,BossMod.Actor)"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.OID",
+        "Members": [
+          {
+            "Name": "BossP1",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17819"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.BossModule",
+        "Members": [
+          {
+            "Name": "PrimaryActor",
+            "Shapes": [
+              "F:BossMod.Actor:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "StateMachine",
+            "Shapes": [
+              "F:BossMod.StateMachine:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Components",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CBossMod.BossComponent\u003E:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "WorldState",
+            "Shapes": [
+              "F:BossMod.WorldState:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Center",
+            "Shapes": [
+              "P:BossMod.WPos:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ActivateComponent",
+            "Shapes": [
+              "M:Public, HideBySig:1:System.Void()"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.StateMachine",
+        "Members": [
+          {
+            "Name": "Phases",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CBossMod.StateMachine\u002BPhase\u003E:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Start",
+            "Shapes": [
+              "M:Public, HideBySig:0:System.Void(System.DateTime)"
+            ],
+            "Bodies": [
+              "9303693F557B57F7970E785F1CCE4C5097838493415F19DDD9CE3DF0D6A0330D"
+            ]
+          },
+          {
+            "Name": "TransitionToPhase",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.Int32)"
+            ],
+            "Bodies": [
+              "1CB7D54046AF00E950C38C9AEB9175DD87F3E825E27B6430D27BBCFFFCB09987"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.StateMachine\u002BPhase",
+        "Members": [
+          {
+            "Name": "InitialState",
+            "Shapes": [
+              "F:BossMod.StateMachine\u002BState:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Update",
+            "Shapes": [
+              "F:System.Func\u00601\u003CSystem.Boolean\u003E:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.StateMachine\u002BState",
+        "Members": [
+          {
+            "Name": "ID",
+            "Shapes": [
+              "F:System.UInt32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "NextStates",
+            "Shapes": [
+              "F:BossMod.StateMachine\u002BState[]:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Duration",
+            "Shapes": [
+              "F:System.Single:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Fru.P3Apocalypse.FruP3ApocalypseScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P3Apocalypse.FruP3ApocalypseScenario",
+        "Members": [
+          {
+            "Name": "AiStrats",
+            "Shapes": [
+              "P:System.Collections.Generic.IReadOnlyList\u00601\u003CAnoMech.Core.Game.Ai.IScenarioAi\u003E:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P3Apocalypse.FruP3ApocalypseAi",
+        "Members": [
+          {
+            "Name": "Name",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Group",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_Name",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "6506363DBB7465EEAAA1E200D6B544335B0CD992EB78470D7181AC5935A26912"
+            ]
+          },
+          {
+            "Name": "get_Group",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "DF28684A0687C98BE38A85E10259817F1C842AD9FC8EAEA47212870218129BE3"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRU",
+        "Members": [
+          {
+            "Name": "_bossP3",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.OID",
+        "Members": [
+          {
+            "Name": "BossP3",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17831"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRUStates",
+        "Members": [
+          {
+            "Name": "P3Apocalypse",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "44C6AFD48C402C8DD35A74BE0F21784D134384D08F9317E62485B1A1A44CF338"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P3ApocalypseDarkWater",
+        "Members": [
+          {
+            "Name": "_config",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.FRUConfig:Private, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "States",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P3ApocalypseDarkWater\u002BState[]:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "NumStatuses",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_swaps",
+            "Shapes": [
+              "F:System.String:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P3ApocalypseDarkWater\u002BState",
+        "Members": [
+          {
+            "Name": "Order",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "InitialGroup",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "InitialPosition",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "AssignedGroup",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "AssignedPosition",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRUConfig",
+        "Members": [
+          {
+            "Name": "P3ApocalypseStaticSpreads",
+            "Shapes": [
+              "F:System.Boolean:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "P3ApocalypseUptime",
+            "Shapes": [
+              "F:System.Boolean:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "P3DarkestDanceOTBait",
+            "Shapes": [
+              "F:System.Boolean:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "P3ApocalypseDarkWater1ReferenceDirection",
+            "Shapes": [
+              "F:System.Single:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Fru.P4DarklitDragonsong.FruP4DarklitDragonsongScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P4DarklitDragonsong.FruP4DarklitDragonsongScenario",
+        "Members": [
+          {
+            "Name": "AiStrats",
+            "Shapes": [
+              "P:System.Collections.Generic.IReadOnlyList\u00601\u003CAnoMech.Core.Game.Ai.IScenarioAi\u003E:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P4DarklitDragonsong.FruP4DarklitDragonsongAi",
+        "Members": [
+          {
+            "Name": "Name",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Group",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_Name",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "AF549217710148FB2E64C5115F567137FD18185D7E863D578A3B4E75C4CBFF64"
+            ]
+          },
+          {
+            "Name": "get_Group",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "DF28684A0687C98BE38A85E10259817F1C842AD9FC8EAEA47212870218129BE3"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRU",
+        "Members": [
+          {
+            "Name": "_bossP4Usurper",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_bossP4Oracle",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.OID",
+        "Members": [
+          {
+            "Name": "UsurperOfFrostP4",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17833"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "OracleOfDarknessP4",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17835"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRUStates",
+        "Members": [
+          {
+            "Name": "P4DarklitDragonsong",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "C938F210AC35E1C80CC1DAA9AD388CD01F6091092D231BE29013FF095BCC89D7"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P4FragmentOfFate",
+        "Members": []
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P4AkhRhai",
+        "Members": []
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P4DarklitDragonsong",
+        "Members": [
+          {
+            "Name": "_tethers",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CSystem.ValueTuple\u00602\u003CBossMod.Actor,BossMod.Actor\u003E\u003E:Private, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Stacks",
+            "Shapes": [
+              "F:BossMod.BitMask:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "AssignS",
+            "Shapes": [
+              "F:BossMod.BitMask:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "AssignE",
+            "Shapes": [
+              "F:BossMod.BitMask:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P4DarklitDragonsongBrightHunger",
+        "Members": [
+          {
+            "Name": "Towers",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CBossMod.Components.GenericTowers\u002BTower\u003E:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P4SomberDance",
+        "Members": [
+          {
+            "Name": "NumCasts",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ForbiddenPlayers",
+            "Shapes": [
+              "F:BossMod.BitMask:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Components.GenericTowers\u002BTower",
+        "Members": [
+          {
+            "Name": "Position",
+            "Shapes": [
+              "F:BossMod.WPos:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ForbiddenSoakers",
+            "Shapes": [
+              "F:BossMod.BitMask:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.BitMask",
+        "Members": [
+          {
+            "Name": "Raw",
+            "Shapes": [
+              "F:System.UInt64:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.WPos",
+        "Members": [
+          {
+            "Name": "Z",
+            "Shapes": [
+              "F:System.Single:Public, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Fru.P3UltimateRelativity.FruP3UltimateRelativityScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P3UltimateRelativity.FruP3UltimateRelativityScenario",
+        "Members": [
+          {
+            "Name": "AiStrats",
+            "Shapes": [
+              "P:System.Collections.Generic.IReadOnlyList\u00601\u003CAnoMech.Core.Game.Ai.IScenarioAi\u003E:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P3UltimateRelativity.FruP3UltimateRelativityAi",
+        "Members": [
+          {
+            "Name": "Name",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Group",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_Name",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "DF28684A0687C98BE38A85E10259817F1C842AD9FC8EAEA47212870218129BE3"
+            ]
+          },
+          {
+            "Name": "get_Group",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "DF28684A0687C98BE38A85E10259817F1C842AD9FC8EAEA47212870218129BE3"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRU",
+        "Members": [
+          {
+            "Name": "_bossP3",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.OID",
+        "Members": [
+          {
+            "Name": "BossP3",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17831"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRUStates",
+        "Members": [
+          {
+            "Name": "P3UltimateRelativity",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "4CA1190F1FB89C93B8BD079D4E935DBCDC4101FF70273F382DB437798DA4C3D9"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P3UltimateRelativity",
+        "Members": [
+          {
+            "Name": "_numYellowTethers",
+            "Shapes": [
+              "F:System.Int32:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "States",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P3UltimateRelativity\u002BPlayerState[]:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_relNorth",
+            "Shapes": [
+              "F:BossMod.WDir:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P3UltimateRelativity\u002BPlayerState",
+        "Members": [
+          {
+            "Name": "FireOrder",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "HaveDarkBlizzard",
+            "Shapes": [
+              "F:System.Boolean:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "RewindOrder",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "AssignedDir",
+            "Shapes": [
+              "F:BossMod.WDir:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "LaserOrder",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.WDir",
+        "Members": [
+          {
+            "Name": "X",
+            "Shapes": [
+              "F:System.Single:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Z",
+            "Shapes": [
+              "F:System.Single:Public, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Fru.P4CrystallizeTime.FruP4CrystallizeTimeScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P4CrystallizeTime.FruP4CrystallizeTimeScenario",
+        "Members": [
+          {
+            "Name": "AiStrats",
+            "Shapes": [
+              "P:System.Collections.Generic.IReadOnlyList\u00601\u003CAnoMech.Core.Game.Ai.IScenarioAi\u003E:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P4CrystallizeTime.FruP4CrystallizeTimeAi",
+        "Members": [
+          {
+            "Name": "Name",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Group",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_Name",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "6FA92453944D2B45EA8FD5DA05C8980F2BBC2F90729EE1670F4F5769A77A42BB"
+            ]
+          },
+          {
+            "Name": "get_Group",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "DF28684A0687C98BE38A85E10259817F1C842AD9FC8EAEA47212870218129BE3"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRU",
+        "Members": [
+          {
+            "Name": "_bossP4Usurper",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_bossP4Oracle",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.OID",
+        "Members": [
+          {
+            "Name": "UsurperOfFrostP4",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17833"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "OracleOfDarknessP4",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17835"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRUStates",
+        "Members": [
+          {
+            "Name": "P4CrystallizeTime",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "128EADAD4D1C85C34BDCDBB3858FC0863B153124382D665B661943F322413D9B"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P4FragmentOfFate",
+        "Members": []
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime",
+        "Members": [
+          {
+            "Name": "_numClaws",
+            "Shapes": [
+              "F:System.Int32:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "PlayerMechanics",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime\u002BMechanic[]:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ClawSides",
+            "Shapes": [
+              "F:System.Int32[]:Public, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime\u002BMechanic",
+        "Members": [
+          {
+            "Name": "None",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime\u002BMechanic:Public, Static, Literal, HasDefault:0"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "FangEruption",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime\u002BMechanic:Public, Static, Literal, HasDefault:1"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "FangWater",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime\u002BMechanic:Public, Static, Literal, HasDefault:2"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "FangDarkness",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime\u002BMechanic:Public, Static, Literal, HasDefault:3"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "FangBlizzard",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime\u002BMechanic:Public, Static, Literal, HasDefault:4"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ClawAir",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime\u002BMechanic:Public, Static, Literal, HasDefault:5"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ClawBlizzard",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.P4CrystallizeTime\u002BMechanic:Public, Static, Literal, HasDefault:6"
+            ],
+            "Bodies": null
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Fru.P2DiamondDust.FruP2DiamondDustScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P2DiamondDust.FruP2DiamondDustScenario",
+        "Members": [
+          {
+            "Name": "AiStrats",
+            "Shapes": [
+              "P:System.Collections.Generic.IReadOnlyList\u00601\u003CAnoMech.Core.Game.Ai.IScenarioAi\u003E:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P2DiamondDust.FruP2DiamondDustAi",
+        "Members": [
+          {
+            "Name": "Name",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Group",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_Name",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "AB44D62D2082FE6B3D5B00AD0DD915A7AE6278F16A6A23ED5BCC5E8E6210A2E8"
+            ]
+          },
+          {
+            "Name": "get_Group",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "DF28684A0687C98BE38A85E10259817F1C842AD9FC8EAEA47212870218129BE3"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRU",
+        "Members": [
+          {
+            "Name": "_bossP2",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.OID",
+        "Members": [
+          {
+            "Name": "BossP2",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17823"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "OraclesReflection",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17824"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRUStates",
+        "Members": [
+          {
+            "Name": "P2DiamondDust",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "18CFE4E95A0E892D0169928ACD764B2124DF07BE5B2921FF1678AABB4B6315C7"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.GroupAssignment",
+        "Members": [
+          {
+            "Name": "_config",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig:Private, Static, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.PartyRolesConfig",
+        "Members": [
+          {
+            "Name": "Assignments",
+            "Shapes": [
+              "F:System.Collections.Generic.Dictionary\u00602\u003CSystem.UInt64,BossMod.PartyRolesConfig\u002BAssignment\u003E:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "SlotsPerAssignment",
+            "Shapes": [
+              "M:Public, HideBySig:0:System.Int32[](BossMod.PartyState)"
+            ],
+            "Bodies": [
+              "4C4293D85334DF9970F63947CEED42A2E9719AD4FC5E7E87A57C5657DFBAA12A"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.PartyRolesConfig\u002BAssignment",
+        "Members": [
+          {
+            "Name": "MT",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:0"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "OT",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:1"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "H1",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:2"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "H2",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:3"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "M1",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:4"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "M2",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:5"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "R1",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:6"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "R2",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:7"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Unassigned",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:8"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P2DiamondDustSafespots",
+        "Members": [
+          {
+            "Name": "_out",
+            "Shapes": [
+              "F:System.Nullable\u00601\u003CSystem.Boolean\u003E:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_supportsBaitCones",
+            "Shapes": [
+              "F:System.Nullable\u00601\u003CSystem.Boolean\u003E:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_conesAtCardinals",
+            "Shapes": [
+              "F:System.Nullable\u00601\u003CSystem.Boolean\u003E:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_safeOffs",
+            "Shapes": [
+              "F:BossMod.WDir[]:Private, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "InitIfReady",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void()"
+            ],
+            "Bodies": [
+              "9443060B03E9DC5C254ECBF146B07776D332CC3E579F3370A0A73290D6B2F914"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P2HeavenlyStrike",
+        "Members": [
+          {
+            "Name": "_safeDirs",
+            "Shapes": [
+              "F:BossMod.WDir[]:Private, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "BuildSafeDirs",
+            "Shapes": [
+              "M:Private, Static, HideBySig:0:BossMod.WDir[](BossMod.BossModule)"
+            ],
+            "Bodies": [
+              "695976E8F60EC1C106EAD574D238AF9D431737171F662218B163744D7BDC9A15"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P2TwinStillnessSilence",
+        "Members": [
+          {
+            "Name": "AOEs",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CBossMod.Components.GenericAOEs\u002BAOEInstance\u003E:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_source",
+            "Shapes": [
+              "F:BossMod.Actor:Private, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "NumCasts",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "OnCastStarted",
+            "Shapes": [
+              "M:Public, Virtual, HideBySig:0:System.Void(BossMod.Actor,BossMod.ActorCastInfo)"
+            ],
+            "Bodies": [
+              "44AA963F1687671331BF9CD3380286AA12B2CFCBE2C7C00AEFC72F4D844D15BC"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Actor",
+        "Members": [
+          {
+            "Name": "CastInfo",
+            "Shapes": [
+              "F:BossMod.ActorCastInfo:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Rotation",
+            "Shapes": [
+              "P:BossMod.Angle:Public, HideBySig, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.ActorCastInfo",
+        "Members": [
+          {
+            "Name": "Action",
+            "Shapes": [
+              "F:BossMod.ActionID:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Rotation",
+            "Shapes": [
+              "F:BossMod.Angle:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.ActionID",
+        "Members": [
+          {
+            "Name": "ID",
+            "Shapes": [
+              "F:System.UInt32:Public, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Angle",
+        "Members": [
+          {
+            "Name": ".ctor",
+            "Shapes": [
+              "M:Private, Static, HideBySig, SpecialName, RTSpecialName:0:void()",
+              "M:Public, HideBySig, SpecialName, RTSpecialName:0:void(System.Numerics.Vector4\u0026)",
+              "M:Public, HideBySig, SpecialName, RTSpecialName:0:void(System.Single)"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Rad",
+            "Shapes": [
+              "F:System.Single:Public, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.WDir",
+        "Members": [
+          {
+            "Name": "X",
+            "Shapes": [
+              "F:System.Single:Public, InitOnly:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Z",
+            "Shapes": [
+              "F:System.Single:Public, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Components.GenericAOEs\u002BAOEInstance",
+        "Members": [
+          {
+            "Name": "Activation",
+            "Shapes": [
+              "F:System.DateTime:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.AID",
+        "Members": [
+          {
+            "Name": "TwinStillnessFirst",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.AID:Public, Static, Literal, HasDefault:40193"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "TwinSilenceFirst",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.AID:Public, Static, Literal, HasDefault:40194"
+            ],
+            "Bodies": null
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Fru.P5FulgentBlade.FruP5FulgentBladeScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P5FulgentBlade.FruP5FulgentBladeScenario",
+        "Members": [
+          {
+            "Name": "AiStrats",
+            "Shapes": [
+              "P:System.Collections.Generic.IReadOnlyList\u00601\u003CAnoMech.Core.Game.Ai.IScenarioAi\u003E:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P5FulgentBlade.FruP5FulgentBladeAi",
+        "Members": [
+          {
+            "Name": "Name",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_Name",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "0E1F661FC95A8DEEA933C70A6C87693B1F1C3E83689AB6E25176A0F5D9E09AAE"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRU",
+        "Members": [
+          {
+            "Name": "_bossP5",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.OID",
+        "Members": [
+          {
+            "Name": "BossP5",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17839"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRUStates",
+        "Members": [
+          {
+            "Name": "P5FulgentBlade",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "281C94C62818F9FB83C89AC0FB9216EB1807984E5BB487845BFBF8BC51726D5B"
+            ]
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Fru.P2LightRampant.FruP2LightRampantScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P2LightRampant.FruP2LightRampantScenario",
+        "Members": [
+          {
+            "Name": "AiStrats",
+            "Shapes": [
+              "P:System.Collections.Generic.IReadOnlyList\u00601\u003CAnoMech.Core.Game.Ai.IScenarioAi\u003E:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P2LightRampant.FruP2LightRampantAi",
+        "Members": [
+          {
+            "Name": "Name",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Group",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_Name",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "6358F4C0EA05717A4805FFC5ED58B3D091D499C67D6E61564664B7D2EAE73768"
+            ]
+          },
+          {
+            "Name": "get_Group",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "DF28684A0687C98BE38A85E10259817F1C842AD9FC8EAEA47212870218129BE3"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRU",
+        "Members": [
+          {
+            "Name": "_bossP2",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.OID",
+        "Members": [
+          {
+            "Name": "BossP2",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17823"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRUStates",
+        "Members": [
+          {
+            "Name": "P2LightRampant",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "55C7A7DEBB8DA0ABFFFABDD3FF7878A40DD07DBF44DD1D8940E5B722386E08E2"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.GroupAssignment",
+        "Members": [
+          {
+            "Name": "_config",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig:Private, Static, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.PartyRolesConfig",
+        "Members": [
+          {
+            "Name": "Assignments",
+            "Shapes": [
+              "F:System.Collections.Generic.Dictionary\u00602\u003CSystem.UInt64,BossMod.PartyRolesConfig\u002BAssignment\u003E:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "SlotsPerAssignment",
+            "Shapes": [
+              "M:Public, HideBySig:0:System.Int32[](BossMod.PartyState)"
+            ],
+            "Bodies": [
+              "4C4293D85334DF9970F63947CEED42A2E9719AD4FC5E7E87A57C5657DFBAA12A"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.PartyRolesConfig\u002BAssignment",
+        "Members": [
+          {
+            "Name": "MT",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:0"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "OT",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:1"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "H1",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:2"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "H2",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:3"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "M1",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:4"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "M2",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:5"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "R1",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:6"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "R2",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:7"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Unassigned",
+            "Shapes": [
+              "F:BossMod.PartyRolesConfig\u002BAssignment:Public, Static, Literal, HasDefault:8"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.P2BrightHunger1",
+        "Members": [
+          {
+            "Name": "_forbidden",
+            "Shapes": [
+              "F:BossMod.BitMask:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Towers",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CBossMod.Components.GenericTowers\u002BTower\u003E:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "NumCasts",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "RebuildTowers",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void()"
+            ],
+            "Bodies": [
+              "3874638C19E4BAF71516AD32CE02E055E055C1A10FC6D744B6B7E80BA271D9D8"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Components.GenericTowers\u002BTower",
+        "Members": [
+          {
+            "Name": "Activation",
+            "Shapes": [
+              "F:System.DateTime:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ForbiddenSoakers",
+            "Shapes": [
+              "F:BossMod.BitMask:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.BitMask",
+        "Members": [
+          {
+            "Name": "Raw",
+            "Shapes": [
+              "F:System.UInt64:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Fru.P5ParadiseRegained.FruP5ParadiseRegainedScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P5ParadiseRegained.FruP5ParadiseRegainedScenario",
+        "Members": [
+          {
+            "Name": "AiStrats",
+            "Shapes": [
+              "P:System.Collections.Generic.IReadOnlyList\u00601\u003CAnoMech.Core.Game.Ai.IScenarioAi\u003E:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Fru.P5ParadiseRegained.FruP5ParadiseRegainedAi",
+        "Members": [
+          {
+            "Name": "Name",
+            "Shapes": [
+              "P:System.String:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName::"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "get_Name",
+            "Shapes": [
+              "M:Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName:0:System.String()"
+            ],
+            "Bodies": [
+              "2CD6D99EA1EAC0CF505815E48DA52F9B80924A94176D98A37C0AE995827943E4"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRU",
+        "Members": [
+          {
+            "Name": "_bossP5",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.OID",
+        "Members": [
+          {
+            "Name": "BossP5",
+            "Shapes": [
+              "F:BossMod.Dawntrail.Ultimate.FRU.OID:Public, Static, Literal, HasDefault:17839"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Dawntrail.Ultimate.FRU.FRUStates",
+        "Members": [
+          {
+            "Name": "P5ParadiseRegained",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "2FE39DED15C09519A92F7C8002B792C95CBDA53B556D157F6E00AB8D2D6D6C5C"
+            ]
+          },
+          {
+            "Name": "P5PolarizingStrikes",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "8518A5EFB25EBC7EB2C053CDD6D299AD0F080E05FE0F698D413783058BD1F933"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

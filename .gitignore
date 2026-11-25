@@ -424,3 +424,15 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+
+# SimBridge local build outputs (not release assets)
+/VALIDATION.txt
+/plugin/AnoBossBridge.dll
+/tooling/AssemblyInfo.cs
+/tooling/ProbeTests.dll
+/tooling/UiTests.dll
+/tooling/ProbeTests.runtimeconfig.json
+/tooling/UiTests.runtimeconfig.json
+
+# Private distribution output
+/release-output/

@@ -1,0 +1,27 @@
+[
+  {
+    "Author": "azazev",
+    "Name": "SimBridge",
+    "InternalName": "AnoBossBridge",
+    "AssemblyVersion": "0.8.0.0",
+    "Description": "An experimental Dalamud compatibility plugin connecting AnoMech simulations with BossMod Reborn encounter modules. Requires both plugins.",
+    "Punchline": "Experimental AnoMech encounter activation for BossmodReborn.",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 15,
+    "Tags": [
+      "diagnostics",
+      "simulation"
+    ],
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "RepoUrl": "https://github.com/azazev/SimBridge",
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadLinkInstall": "https://github.com/azazev/SimBridge/releases/download/v0.8.0-beta.1/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/azazev/SimBridge/releases/download/v0.8.0-beta.1/latest.zip",
+    "LastUpdate": 0,
+    "Changelog": "Initial experimental beta; eight FRU simulation integrations. See the release notes for limitations.",
+    "IconUrl": "https://raw.githubusercontent.com/azazev/SimBridge/main/assets/icon.png"
+  }
+]
