@@ -19,7 +19,8 @@ This is a **private release-preparation branch**, not a published release.
 - [x] Owner selected AGPL-3.0-or-later for SimBridge's own contributions; staged full license text, upstream notices, BSD license and approved optional Ko-fi link.
 - [x] Owner confirmed independent personal project and approved license for their own contributions.
 - [x] Resolve published AnoMech 0.5.1.0 and BossMod Reborn 7.5.8.10 source tags and verify their license files.
-- [ ] Identify exact local Dalamud/Lumina build provenance and resolve adapted-code notices and corresponding-source obligations; see PROVENANCE.md.
+- [x] Identify local Dalamud 15.0.4.1 and Lumina 7.7.0 reference source revisions from assembly metadata; verify upstream commits and license texts; record four owner-reported SHA-256 fingerprints.
+- [ ] Resolve adapted-code notices, applicable combined-work and corresponding-source obligations and any necessary upstream binary matching; see PROVENANCE.md.
 - [x] Stage verified original plugin/AnoBossBridge.json and plugin/AnoBossBridge.deps.json text metadata; preserve internal identity.
 - [x] Add documented build-only, validation-only and explicit BossMod target options; preserve default historical .9/.10 validation.
 - [x] Owner confirmed successful clean Windows compilation with warnings treated as errors, and groups 1–5 passed on commit 565afc7.

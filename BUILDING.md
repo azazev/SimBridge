@@ -8,7 +8,7 @@ The existing direct Roslyn build pins .NET SDK 10.0.100, .NET reference pack 10.
 
 - Windows PowerShell or PowerShell on Windows.
 - .NET SDK 10.0.100 and .NET 10 reference pack 10.0.0 under the selected DotnetRoot (default: Program Files\dotnet).
-- For compilation: Dalamud API 15 development DLLs under %APPDATA%\XIVLauncher\addon\Hooks\dev (Dalamud.dll, Dalamud.Common.dll, Lumina.dll, Dalamud.Bindings.ImGui.dll).
+- For compilation: Dalamud API 15 development DLLs under %APPDATA%\XIVLauncher\addon\Hooks\dev (Dalamud.dll, Dalamud.Common.dll, Lumina.dll, Dalamud.Bindings.ImGui.dll). The owner-reported reference versions were Dalamud 15.0.4.1 and Lumina 7.7.0; see [release/PROVENANCE.md](release/PROVENANCE.md) for exact embedded revisions and SHA-256 fingerprints.
 - For installed compatibility validation: AnoMech 0.5.1.0 and each selected BossMod Reborn version in the standard XIVLauncher\installedPlugins version folders under %APPDATA%, with their required assemblies and local Dalamud libraries available.
 
 Do not downgrade a working game setup merely to run the historical suite. Use the explicit installed-version target when validating a current environment. The default historical targets are still mandatory if no override is supplied. Both installed-assembly test groups receive the same list; other historical versions are not auto-discovered.

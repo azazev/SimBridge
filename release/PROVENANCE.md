@@ -15,14 +15,29 @@ Private staging record, 2026-11-24. This is an engineering review, not a legal o
 - The owner confirmed that SimBridge is an independent personal project, with no other person, employer or company involved in its ownership or development; the owner approved AGPL-3.0-or-later for their own contributions and confirmed the preceding owner-side statement about no independently introduced external code outside the development sessions.
 - AnoMech release [v0.5.1.0](https://github.com/anomek/AnoMech/releases/tag/v0.5.1.0) resolves to [6aec4a5940df56ebc4f70a2fdddeceb31c7848b8](https://github.com/anomek/AnoMech/tree/6aec4a5940df56ebc4f70a2fdddeceb31c7848b8). Its LICENSE.md is identical to the staged AGPLv3 text (Git blob 0ad25db4bd1d86c452db3f9602ccdbe172438f52).
 - BossMod Reborn release [7.5.8.10](https://github.com/FFXIV-CombatReborn/BossmodReborn/releases/tag/7.5.8.10) resolves to [05bdf3abd1963c84105784273a8c171bb7cf0b7c](https://github.com/FFXIV-CombatReborn/BossmodReborn/tree/05bdf3abd1963c84105784273a8c171bb7cf0b7c). Its LICENSE is identical to the staged BSD-3-Clause text (Git blob 560bcd91c155c8c8a25d0df7a787c41e85c64bce). Its upstream third-party notices identify KamiToolKit (MIT) and RebornMaterial (LGPL-3.0-or-later); they are not bundled in the three SimBridge files.
-- Published tag-to-source mapping is verified for these two upstream releases, not a cryptographic match of the locally installed DLLs to release assets. The exact locally used Dalamud/API 15 build and Lumina dependency revision still need identifying.
+- Published tag-to-source mapping is verified for these two upstream releases, not a cryptographic match of the locally installed DLLs to release assets. The local Dalamud/API 15 and Lumina development reference revisions were subsequently identified from owner-provided assembly product versions; see below.
 - A review of the original production source found no explicit copied/adapted-code notices; this does not establish absence of copied expression. No independent exhaustive comparison with all upstream or tutorial source has been performed.
 - PR discussion retrieval returned zero comments at this review point.
+
+## Local build-reference provenance — 2026-11-24
+
+The owner supplied read-only FileVersionInfo and SHA-256 output for all four DLLs required by the documented direct Roslyn build. No local absolute paths or user identity are recorded.
+
+| File | File version | Product version | SHA-256 |
+| --- | --- | --- | --- |
+| Dalamud.dll | 15.0.4.1 | 15.0.4.1+d0e93484f99fdb7d58b3a2f22152cf108f3486ff | 57bd0e4e7f1fcb00325b90f369665b37feb73084307a1374734f33fdfe52b257 |
+| Dalamud.Common.dll | 1.0.0.0 | 1.0.0+d0e93484f99fdb7d58b3a2f22152cf108f3486ff | 294a1f513df5faf5847fb72df63100ced46b1b3307daf9490c9742fab476eabb |
+| Dalamud.Bindings.ImGui.dll | 1.0.0.0 | 1.0.0+d0e93484f99fdb7d58b3a2f22152cf108f3486ff | a8487bf7cd26f86348ad5c2fe5eebd5b8704e989013601a91388e2ca81207c9b |
+| Lumina.dll | 7.7.0.0 | 7.7.0+b92c0cbdb65c9e53b0ec5faafa83b2cc32aa9a7c | 6b92e0ba9f8370358de57887812744548054e40640af29a3d101f80d8cd8f614 |
+
+- Verified [Dalamud commit d0e9348](https://github.com/goatcorp/Dalamud/tree/d0e93484f99fdb7d58b3a2f22152cf108f3486ff), dated 2026-11-18, commit message "build: 15.0.4.1". Its LICENSE blob (0ad25db4bd1d86c452db3f9602ccdbe172438f52) matches the staged AGPLv3 text.
+- Verified [Lumina commit b92c0cb](https://github.com/NotAdam/Lumina/tree/b92c0cbdb65c9e53b0ec5faafa83b2cc32aa9a7c), dated 2026-08-25. Its LICENSE blob (5c93f45654687732c6b9b568186deb766f78a81c) contains WTFPL version 2. The pinned Dalamud Directory.Packages.props explicitly references Lumina 7.7.0.
+- These are owner-reported local reference fingerprints and verified embedded-revision mappings, not independent hashes of upstream release binaries, proof of a hermetic rebuild, or proof that every runtime dependency file matches an upstream artifact. None of these four DLLs is bundled by SimBridge. The source revision identification gate is satisfied; binary provenance verification where necessary and the scope of corresponding-source obligations are separate questions.
 
 ## Open pre-publication gates
 
 - Owner-side authorization is recorded. Identify any copied or adapted expressions (including AI-assisted contributions) and preserve all applicable notices; the owner confirmation does not certify the entire code provenance.
-- The two upstream release tags and license files are resolved above; identify the precise Dalamud/API 15 and locally referenced Lumina build revisions and, where needed, match local binaries to upstream published assets.
+- All four principal upstream source revisions and license texts are identified above. Where required for the compliance review, match local binaries to upstream published assets; do not claim this match from version metadata alone.
 - Assess combined-work and corresponding-source obligations for the intended binary distribution and preserve applicable upstream terms. Provide complete corresponding source, build/install scripts and any additional required source access for the exact release, rather than assuming a repository link alone satisfies every obligation.
 - Verify license and notice files accompany distributed assets where required. The public release is blocked pending resolution.
 
