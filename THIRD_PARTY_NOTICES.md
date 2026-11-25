@@ -12,6 +12,12 @@ SimBridge is an independent compatibility project by azazev. It is not endorsed 
 
 BossMod Reborn's [third-party notices at release 7.5.8.10](https://github.com/FFXIV-CombatReborn/BossmodReborn/blob/05bdf3abd1963c84105784273a8c171bb7cf0b7c/THIRD_PARTY_NOTICES.md) identify KamiToolKit (MIT) and RebornMaterial (LGPL-3.0-or-later). Those assemblies and overlay assets are not included in the verified SimBridge plugin payload. Any corresponding-source obligations extending to upstream components remain under review.
 
+## Specific adapted logic and integration references
+
+- **Apocalypse — AnoMech:** `source/RoleSync.cs`, `ResolveGroups`, adapts the Dark Water group-adjustment algorithm (support/DPS adjuster selection and swap) from [FruP3ApocalypseAi.cs, AdjustWaterGroups/Adjusters](https://github.com/anomek/AnoMech/blob/6aec4a5940df56ebc4f70a2fdddeceb31c7848b8/AnoMech/Scenarios/Fru/P3Apocalypse/FruP3ApocalypseAi.cs). Credit to AnoMech's copyright holders and contributors; the applicable upstream AGPLv3 terms are retained. This attribution does not claim ownership of the upstream expression.
+- **Ultimate Relativity — BossMod Reborn:** `source/RelativitySync.cs` adapts the native laser-order mapping in [P3UltimateRelativity.cs](https://github.com/FFXIV-CombatReborn/BossmodReborn/blob/05bdf3abd1963c84105784273a8c171bb7cf0b7c/BossMod/Modules/Dawntrail/Ultimate/FRU/P3UltimateRelativity.cs). The BSD-3-Clause copyright and full license are retained as noted above.
+- **Other integration references:** the Darklit Dragonsong, Ultimate Relativity and Crystallize Time role-mapping adapters consult the corresponding AnoMech strategies and BossMod components; Diamond Dust and Light Rampant invoke native BossMod calculations. This is attribution for the reviewed integration, not a claim that all expression was copied or that no further attribution is necessary.
+
 ## Distribution scope
 
 The verified baseline contains only SimBridge's DLL, manifest and dependency metadata in the plugin directory; upstream DLLs and assets are not bundled. Reflection contracts contain upstream identifiers, member shapes and method fingerprints; they do not package the upstream assemblies. The original source snapshots and resolved published release tags are documented in [release/PROVENANCE.md](release/PROVENANCE.md). See [release/SOURCE.md](release/SOURCE.md) for the planned corresponding-source index. These are not claimed as cryptographic matches for every installed dependency binary.
