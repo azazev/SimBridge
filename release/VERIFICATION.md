@@ -59,3 +59,18 @@ These are **historical private test asset hashes**, not final public release ass
 The owner explicitly accepted the isolated, unreproduced mismatch as an experimental-beta backlog item on November 24. This is not evidence that reinstalling fixes it, that both marker variations were explicitly tested, or that all guidance is correct. Do not claim a runtime fix. Raw diagnostics and screenshots are excluded for privacy.
 
 Private distribution validation is complete in the tested environment. Public delivery and licensing gates remain open.
+
+
+## Icon-aware private packaging — 2026-11-24
+
+Checkout: `6cdb54b0ecf61c064b0d43c4fe04b4a306393605`. Owner output reports all three unchanged payload hashes, manifest identity, archive entry lists and icon integrity passed. The subsequent uploaded-asset review reported five matching checksums, 50 source entries and seven installer entries, with the source tree matching that checkout.
+
+| Private draft file | SHA-256 |
+| --- | --- |
+| icon.png | 6ad4cf3e8554f2f7623316dc95f1387ffd7f2e4428002328c6ed762f477e7e65 |
+| latest.zip | f379884dc2b675d824389193d40bf5806382d2129efcbcb1295aa56a1bceffa2 |
+| repo.json | 5ac33e6e112efdbc3f5ae0de5af65d40fc0aacdec2e5280b839239ee795f7b72 |
+| repo.local.json | f0d45c1b0b6ea46e14564eea695ee13c513d3fffe0a047be4a82495c4d792104 |
+| SimBridge-v0.8.0-beta.1-source.zip | 79f998a7f1785db38a02351a28c0520e24ac908c186fa9bb4b732fc7b6bf6510 |
+
+The loopback icon opened in a browser, but Dalamud retained the default icon even after restart. No confirmed icon request from Dalamud was recorded. Owner deferred this non-blocking cosmetic issue; no fix is claimed. These are historical private draft hashes, superseded by the final packaging run after documentation changes.

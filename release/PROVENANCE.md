@@ -57,6 +57,16 @@ Direct package declarations reviewed (not a complete restored transitive depende
 
 SimBridge's tested direct compiler script references only the four local Dalamud/Lumina assemblies and the .NET reference pack. It ships none of these upstream packages. The wider inventory is conservative given the close runtime integration. No blanket System Libraries exclusion or complete package-source/compatibility certification is asserted.
 
+## Additional dependency mapping and preservation decision — 2026-11-24
+
+The owner approved pinned upstream source references under AGPLv3 section 6(d), combined with a recoverable-source preservation policy. The operational policy is in SOURCE.md and travels with the binary. It does not waive any corresponding-source obligation.
+
+- RebornMaterial tag 7.5.8.4 resolves to 0c74204ecfd6785c27ac53213950c3ad08337e63; the LICENSE is LGPLv3 and its project declares LGPL-3.0-or-later. BossMod's pinned packages.lock.json resolves RebornMaterial 7.5.8.4, DalamudPackager 15.0.0 and TerraFX.Interop.Windows 10.0.28000, with no other package entries in that lock. RebornMaterial's pinned project and lock use Dalamud.NET.Sdk 15.0.0, framework assembly references (including FFXIVClientStructs), and DotNet.ReproducibleBuilds 2.0.5. No Git submodules in its reviewed tree. Binary-to-source cryptographic equivalence not verified.
+- NAudio v2.2.1 resolves to b5d5ff83fd378f046398891fe5cd99426ce44732; its license.txt is MIT (Copyright 2020 Mark Heath). NVorbis v0.10.5 resolves to 519d4e2aae7d6a4d5bab552ec5c1e517e9c78855; its LICENSE is MIT (Copyright 2020 Andrew Ward). Both exact trees were reachable and have no Git submodules. These are source-tag mappings for the versions declared by AnoMech, not local binary verification.
+- Public NuGet pages for NAudio.Core/WinMM 2.2.1, NVorbis 0.10.5, Dalamud.NET.Sdk 15.0.0, DalamudPackager 15.0.0 and TerraFX.Interop.Windows 10.0.28000 were retrieved. SDK and Packager are build helpers, not used by SimBridge's tested direct Roslyn path. RebornMaterial's NuGet page could not be retrieved by the public browsing tool; the pinned upstream source and BossMod lock were retrieved through the repository connector. No exact source mapping for every build-tool/package artifact is asserted.
+- Public browsing retrieved the exact Lumina source page; attempts to retrieve the exact AnoMech, BossMod, Dalamud and RebornMaterial commit pages returned cache misses. Authenticated repository reads had succeeded. This is inconclusive for anonymous retrieval, not proof those sources are unavailable.
+- Source preservation and recovery instructions are approved, but no upstream backup archives or recurring availability monitoring have been created in this review. An actual anonymous source retrieval and backup restoration check, and review of remaining required transitive package sources and exclusions, are outstanding. Do not represent the adoption of the policy as completed compliance.
+
 ## Open pre-publication gates
 
 - Owner-side authorization and targeted adapted-logic attribution are recorded. Review any additional adapted expressions or applicable copyright notices found during final review; the limited comparison does not certify the entire code provenance.

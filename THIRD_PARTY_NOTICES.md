@@ -12,6 +12,14 @@ SimBridge is an independent compatibility project by azazev. It is not endorsed 
 
 BossMod Reborn's [third-party notices at release 7.5.8.10](https://github.com/FFXIV-CombatReborn/BossmodReborn/blob/05bdf3abd1963c84105784273a8c171bb7cf0b7c/THIRD_PARTY_NOTICES.md) identify KamiToolKit (MIT) and RebornMaterial (LGPL-3.0-or-later). Those assemblies and overlay assets are not included in the verified SimBridge plugin payload. Any corresponding-source obligations extending to upstream components remain under review.
 
+## Additional pinned dependency references
+
+- RebornMaterial 7.5.8.4: [source](https://github.com/LTS-FFXIV/RebornMaterial/tree/0c74204ecfd6785c27ac53213950c3ad08337e63), [LGPLv3 text](https://github.com/LTS-FFXIV/RebornMaterial/blob/0c74204ecfd6785c27ac53213950c3ad08337e63/LICENSE); upstream project declares LGPL-3.0-or-later, copyright The Combat Reborn Team per BossMod's notices.
+- NAudio 2.2.1 (Core and WinMM): [source](https://github.com/naudio/NAudio/tree/b5d5ff83fd378f046398891fe5cd99426ce44732), [MIT license](https://github.com/naudio/NAudio/blob/b5d5ff83fd378f046398891fe5cd99426ce44732/license.txt); copyright 2020 Mark Heath.
+- NVorbis 0.10.5: [source](https://github.com/NVorbis/NVorbis/tree/519d4e2aae7d6a4d5bab552ec5c1e517e9c78855), [MIT license](https://github.com/NVorbis/NVorbis/blob/519d4e2aae7d6a4d5bab552ec5c1e517e9c78855/LICENSE); copyright 2020 Andrew Ward.
+
+These are upstream dependencies of the separately installed plugins, not binaries redistributed in SimBridge's installer. Preserve original license/notice files if additional source archives are distributed. See [release/SOURCE.md](release/SOURCE.md) for the approved source availability policy and release checks.
+
 ## Specific adapted logic and integration references
 
 - **Apocalypse — AnoMech:** `source/RoleSync.cs`, `ResolveGroups`, adapts the Dark Water group-adjustment algorithm (support/DPS adjuster selection and swap) from [FruP3ApocalypseAi.cs, AdjustWaterGroups/Adjusters](https://github.com/anomek/AnoMech/blob/6aec4a5940df56ebc4f70a2fdddeceb31c7848b8/AnoMech/Scenarios/Fru/P3Apocalypse/FruP3ApocalypseAi.cs). Credit to AnoMech's copyright holders and contributors; the applicable upstream AGPLv3 terms are retained. This attribution does not claim ownership of the upstream expression.

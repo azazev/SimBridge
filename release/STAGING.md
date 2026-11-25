@@ -21,7 +21,8 @@ This is a **private release-preparation branch**, not a published release.
 - [x] Resolve published AnoMech 0.5.1.0 and BossMod Reborn 7.5.8.10 source tags and verify their license files.
 - [x] Identify local Dalamud 15.0.4.1 and Lumina 7.7.0 reference source revisions from assembly metadata; verify upstream commits and license texts; record four owner-reported SHA-256 fingerprints.
 - [x] Resolve all ten direct and five nested Dalamud Git submodule tree references and identify declared upstream package inputs.
-- [ ] Resolve remaining applicable notices, corresponding-source completeness (including restored transitive packages, anonymous recursive access and any necessary binary matching); see PROVENANCE.md.
+- [x] Owner approved pinned source access with source preservation policy; record in SOURCE.md and pin additional RebornMaterial, NAudio and NVorbis source revisions and license references.
+- [ ] Resolve remaining applicable notices and required corresponding-source scope, including any necessary transitive package mappings and exclusions; verify anonymous recursive retrieval and preserve recoverable source copies before binary publication.
 - [x] Stage verified original plugin/AnoBossBridge.json and plugin/AnoBossBridge.deps.json text metadata; preserve internal identity.
 - [x] Add documented build-only, validation-only and explicit BossMod target options; preserve default historical .9/.10 validation.
 - [x] Owner confirmed successful clean Windows compilation with warnings treated as errors, and groups 1–5 passed on commit 565afc7.
@@ -32,12 +33,14 @@ This is a **private release-preparation branch**, not a published release.
 - [x] Private loopback repository, installer-based loading, enable preference persistence, Diamond Dust smoke test and same-version uninstall/reinstall passed.
 - [x] Owner accepted one unreproduced Diamond Dust assignment mismatch as a documented experimental-beta limitation, not a resolved bug. Record in COMPATIBILITY.md and VERIFICATION.md; keep on development backlog.
 - [x] Stage approved original lavender icon as a 128x128 PNG and configure draft installer metadata and local icon delivery; no runtime files modified.
-- [ ] Execute updated packaging script and verify icon display, final documentation/source assets, checksums and final source snapshot.
+- [x] Icon-aware packaging at 6cdb54b passed Windows execution and private asset inspection; icon did not render in Dalamud, owner accepted deferral as a cosmetic issue.
+- [ ] Regenerate final assets from approved snapshot after source policy/notice changes; check public icon later.
 - [ ] Actual version-to-version update/rollback has not been tested; defer to a separately versioned compatible build. Do not claim same-version reinstall as an update.
 - [ ] Finalize all required corresponding-source access and notices before distributing publicly.
 - [x] Verify new source commit uses azazev GitHub noreply identity.
 - [x] Initial reachable main/staging history audit: 14 commits, 55 file changes; no obvious credential, personal path or private email patterns in retrieved complete patches. Verified author identities and initial automated GitHub committer; scanned original DLL printable strings.
-- [ ] Final history/ref, PR discussion and release asset privacy audit after remaining edits (tags endpoint not accessible in current connector).
+- [x] Staged history/ref screening at 6cdb54b: 22 reachable identities checked, zero tags via matching refs, zero releases/comments/reviews; 40 recent text patches screened.
+- [ ] Recheck final history/ref and release assets after remaining edits.
 - [x] Confirmed Dalamud recognizes loopback custom repository and installs verified ZIP.
 - [ ] Verify anonymous public HTTPS feed and installer asset downloads after explicit public-release approval; do not advertise before verification.
 - [ ] Receive explicit approval to make this repository or a release public.
