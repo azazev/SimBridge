@@ -35,7 +35,7 @@ The source links above identify the reviewed source snapshots. For a checkout in
     git clone https://github.com/NotAdam/Lumina.git
     git -C Lumina checkout b92c0cbdb65c9e53b0ec5faafa83b2cc32aa9a7c
 
-Use the upstream build documentation and package declarations at those revisions. The pinned Dalamud tree has ten submodules whose revisions are recorded by Git; the checkout command obtains them recursively. Generated repository ZIPs alone omit submodule contents.
+Use the upstream build documentation and package declarations at those revisions. The pinned Dalamud tree has ten submodules whose revisions are recorded by Git; the checkout command obtains them recursively. Generated repository ZIPs alone omit submodule contents. The original Nomade040/nmd URL redirects to https://github.com/gh-nomad/nmd; the exact pinned commit is available there. All ten direct and five nested gitlink trees were reachable in the release review. Consult the upstream project/package declarations for their additional build dependencies; see PROVENANCE.md for scope and remaining checks.
 
 ## Availability and release scope
 

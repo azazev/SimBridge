@@ -30,7 +30,7 @@ $entries = @($decoded)
 if ($entries.Count -ne 1) { throw 'Expected one store entry' }
 $entry = $entries[0]
 if ($entry -isnot [System.Management.Automation.PSCustomObject]) { throw 'Expected a single JSON store object, not a nested array' }
-foreach ($property in @('DownloadLinkInstall','DownloadLinkUpdate','LastUpdate','IsTestingExclusive','IsHide','Name','InternalName','AssemblyVersion','DalamudApiLevel','ApplicableVersion','Author')) {
+foreach ($property in @('DownloadLinkInstall','DownloadLinkUpdate','IconUrl','LastUpdate','IsTestingExclusive','IsHide','Name','InternalName','AssemblyVersion','DalamudApiLevel','ApplicableVersion','Author')) {
     if ($null -eq $entry.PSObject.Properties[$property]) { throw "Missing store property: $property" }
 }
 foreach ($key in @('Name','InternalName','AssemblyVersion','DalamudApiLevel','ApplicableVersion','Author')) {
@@ -44,6 +44,10 @@ foreach ($path in $sourceFiles) {
     if ($path -notmatch '^[A-Za-z0-9._/-]+$' -or $path -match '(^|/)\.\.(/|$)|^/' -or $path -match '(?i)\.(dll|exe|pdb|zip|log|jsonl)$') { throw "Unsafe source entry: $path" }
     if (-not (Test-Path -LiteralPath (Join-Path $root $path) -PathType Leaf)) { throw "Missing source entry: $path" }
 }
+$iconPath = Join-Path $root 'assets/icon.png'
+$iconHash = '6ad4cf3e8554f2f7623316dc95f1387ffd7f2e4428002328c6ed762f477e7e65'
+if ((Get-FileHash -LiteralPath $iconPath -Algorithm SHA256).Hash -ne $iconHash) { throw 'Unexpected icon hash' }
+if ($entry.IconUrl -ne 'https://raw.githubusercontent.com/azazev/SimBridge/main/assets/icon.png') { throw 'Unexpected public icon URL' }
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 Add-Type -AssemblyName System.IO.Compression
 function Copy-RelativeFile([string]$FromRoot, [string]$ToRoot, [string]$Relative) {
@@ -94,12 +98,15 @@ try {
     $localUrl = "http://127.0.0.1:$LocalTestPort/latest.zip"
     $entry.DownloadLinkInstall = $localUrl
     $entry.DownloadLinkUpdate = $localUrl
+    $localIcon = "http://127.0.0.1:$LocalTestPort/icon.png"
+    $entry.IconUrl = $localIcon
+    Copy-Item -LiteralPath $iconPath -Destination (Join-Path $result 'icon.png')
     $entry.LastUpdate = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
     $localJson = ConvertTo-Json -InputObject (,$entry) -Depth 10
     $localDecoded = ConvertFrom-Json -InputObject $localJson
     $localEntries = @($localDecoded)
     if (-not $localJson.TrimStart().StartsWith('[') -or $localEntries.Count -ne 1 -or $localEntries[0] -isnot [System.Management.Automation.PSCustomObject]) { throw 'Local feed must be an array containing exactly one store object' }
-    if ($localEntries[0].DownloadLinkInstall -ne $localUrl -or $localEntries[0].DownloadLinkUpdate -ne $localUrl -or $localEntries[0].InternalName -ne $manifest.InternalName) { throw 'Local feed round-trip verification failed' }
+    if ($localEntries[0].DownloadLinkInstall -ne $localUrl -or $localEntries[0].DownloadLinkUpdate -ne $localUrl -or $localEntries[0].InternalName -ne $manifest.InternalName -or $localEntries[0].IconUrl -ne $localIcon) { throw 'Local feed round-trip verification failed' }
     [IO.File]::WriteAllText((Join-Path $result 'repo.local.json'),$localJson,$utf8)
     $checksums = @(Get-ChildItem -LiteralPath $result -File | Sort-Object Name | ForEach-Object {
         "$((Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant())  $($_.Name)"

@@ -44,6 +44,19 @@ Reviewed the actual staging source at 6def6c6, including the module lifecycle ad
 - AGPLv3 sections 1 and 6(d) permit third-party source hosting with equivalent free access and clear directions alongside the binary; the distributor remains responsible for availability. Section 13 also addresses modified programs with remote network interaction; this local bridge does not itself implement a remote-user service. Do not mistake the local repository test for such a service. See the [license text](https://www.gnu.org/licenses/agpl-3.0.html) and [FSF FAQ](https://www.gnu.org/licenses/gpl-faq.html#GPLPlugins).
 - The exact Dalamud tree has ten Git submodules, so a GitHub snapshot ZIP alone would omit their contents. Record recursive checkout instructions in SOURCE.md, using the pinned commit and its gitlinks. The pinned AnoMech and BossMod trees have no Git submodules at those revisions. Transitive package sources, nested submodule availability, any additional applicable notices, and completeness of the source delivery path must still be checked; do not claim all corresponding-source obligations are satisfied.
 
+## Recursive source access and build dependency inventory — 2026-11-24
+
+All ten direct and five nested gitlinks in the pinned Dalamud 15.0.4.1 tree resolved to complete GitHub tree metadata via authenticated repository reads. The nested gitlinks are two EXDSchema snapshots under Lumina.Excel and the underlying gc-imgui, gc-ImGuizmo and gc-implot repositories. The original Nomade040/nmd URL returned a redirect; the renamed gh-nomad/nmd repository resolves the exact pinned commit. No further nested gitlinks were found in those five trees. This verifies source-tree reachability via the connector, not an anonymous recursive clone/build or complete archive-byte retrieval.
+
+Direct package declarations reviewed (not a complete restored transitive dependency graph):
+
+- AnoMech/AnoMech.csproj: Dalamud.NET.Sdk 15.0.0, NAudio.Core 2.2.1, NAudio.WinMM 2.2.1, NVorbis 0.10.5, build analyzer Microsoft.CodeAnalysis.BannedApiAnalyzers 5.6.0; relay project source is in the same tree.
+- BossMod/BossModReborn.csproj: DalamudPackager 15.0.0, RebornMaterial 7.5.8.4, TerraFX.Interop.Windows 10.0.28000, local Dalamud references and in-tree source generator. Source generator references Microsoft.CodeAnalysis.CSharp 5.9.0. Upstream third-party notices cover RebornMaterial and KamiToolKit; exact package source mapping remains to be reviewed.
+- Dalamud/Directory.Packages.props records central versions and includes Lumina 7.7.0, HexaGen.Runtime 1.1.20, goatcorp.Reloaded.Hooks 4.2.2, Reloaded.Memory 7.0.0, Reloaded.Memory.Buffers 2.0.0 and other libraries. Consult that exact file and each project/lock file for the complete declared list.
+- Lumina/src/Lumina/Lumina.csproj: BCnEncoder.Net 2.2.1, Microsoft.Extensions.ObjectPool 10.0.0, build-only MinVer 6.0.0.
+
+SimBridge's tested direct compiler script references only the four local Dalamud/Lumina assemblies and the .NET reference pack. It ships none of these upstream packages. The wider inventory is conservative given the close runtime integration. No blanket System Libraries exclusion or complete package-source/compatibility certification is asserted.
+
 ## Open pre-publication gates
 
 - Owner-side authorization and targeted adapted-logic attribution are recorded. Review any additional adapted expressions or applicable copyright notices found during final review; the limited comparison does not certify the entire code provenance.

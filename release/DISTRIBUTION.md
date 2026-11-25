@@ -16,7 +16,8 @@ Outputs:
 - SimBridge-v0.8.0-beta.1-source.zip — reviewed source, build and test tools, documentation and license files, excluding generated DLLs, logs and private files.
 - repo.json — proposed GitHub-hosted feed; not usable while private. LastUpdate must be set to actual publication time before publishing.
 - repo.local.json — loopback-only feed for private testing.
-- SHA256SUMS.txt — generated archive and feed hashes.
+- icon.png — approved 128x128 lavender plugin icon, served by the private loopback feed.
+- SHA256SUMS.txt — generated archive, feed and icon hashes.
 
 Do not distribute these draft files publicly until the provenance, corresponding-source and privacy gates are closed. Packaging succeeded on Windows at 555da8f; private assets and local feed passed inspection and installation tests. See VERIFICATION.md for the historical draft hashes and results. Final archives must be regenerated after documentation changes. No GitHub Release or public live repository exists.
 
@@ -33,6 +34,8 @@ https://raw.githubusercontent.com/azazev/SimBridge/main/repo.json
 Planned install/update asset:
 https://github.com/azazev/SimBridge/releases/download/v0.8.0-beta.1/latest.zip
 
+Planned public icon: https://raw.githubusercontent.com/azazev/SimBridge/main/assets/icon.png
+
 These URLs are not live. Dalamud does not support authentication for custom repository feeds; a GitHub-hosted end-to-end test needs separately authorized public access.
 
 ## Private local installation test (after packaging review)
@@ -41,7 +44,7 @@ If a local Python 3 installation is already available, the draft feed can be ser
 
     python -m http.server 8765 --bind 127.0.0.1 --directory .\release-output
 
-In a second window, check http://127.0.0.1:8765/repo.local.json and latest.zip. Loopback HTTP was accepted by the tested client on November 24, 2026. Other client versions or configurations may differ; if rejected, stop and use the existing manual development-plugin verification route rather than exposing a private feed publicly or weakening security settings.
+In a second window, check http://127.0.0.1:8765/repo.local.json, latest.zip and icon.png. The updated private feed points to the local icon; the public template points to the planned main-branch asset. Loopback HTTP was accepted by the tested client on November 24, 2026. Other client versions or configurations may differ; if rejected, stop and use the existing manual development-plugin verification route rather than exposing a private feed publicly or weakening security settings.
 
 Before installer testing, back up the existing SimBridge configuration and disable/remove its development-plugin registration; never run two copies with the same internal identity. Add the loopback repo only if accepted, install SimBridge, check /simbridge and /simbridge status, verify enable/disable preference and clean reload, and start one fresh supported simulation. Test uninstall/reinstall and persistence with backups. Stop the server and remove the temporary custom repo afterward. Do not change upstream versions solely for this test.
 

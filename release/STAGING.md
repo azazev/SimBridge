@@ -20,7 +20,8 @@ This is a **private release-preparation branch**, not a published release.
 - [x] Owner confirmed independent personal project and approved license for their own contributions.
 - [x] Resolve published AnoMech 0.5.1.0 and BossMod Reborn 7.5.8.10 source tags and verify their license files.
 - [x] Identify local Dalamud 15.0.4.1 and Lumina 7.7.0 reference source revisions from assembly metadata; verify upstream commits and license texts; record four owner-reported SHA-256 fingerprints.
-- [ ] Resolve remaining applicable notices, combined-work and corresponding-source completeness (including transitive dependencies, recursive upstream source access and any necessary binary matching); see PROVENANCE.md.
+- [x] Resolve all ten direct and five nested Dalamud Git submodule tree references and identify declared upstream package inputs.
+- [ ] Resolve remaining applicable notices, corresponding-source completeness (including restored transitive packages, anonymous recursive access and any necessary binary matching); see PROVENANCE.md.
 - [x] Stage verified original plugin/AnoBossBridge.json and plugin/AnoBossBridge.deps.json text metadata; preserve internal identity.
 - [x] Add documented build-only, validation-only and explicit BossMod target options; preserve default historical .9/.10 validation.
 - [x] Owner confirmed successful clean Windows compilation with warnings treated as errors, and groups 1–5 passed on commit 565afc7.
@@ -30,7 +31,8 @@ This is a **private release-preparation branch**, not a published release.
 - [x] Packaging executed on Windows from `555da8f`; all three payload hashes, both archive entry lists and four output checksums verified. Source archive matches that staging tree.
 - [x] Private loopback repository, installer-based loading, enable preference persistence, Diamond Dust smoke test and same-version uninstall/reinstall passed.
 - [x] Owner accepted one unreproduced Diamond Dust assignment mismatch as a documented experimental-beta limitation, not a resolved bug. Record in COMPATIBILITY.md and VERIFICATION.md; keep on development backlog.
-- [ ] Regenerate final documentation/source assets after staging edits; recheck package integrity and final source snapshot.
+- [x] Stage approved original lavender icon as a 128x128 PNG and configure draft installer metadata and local icon delivery; no runtime files modified.
+- [ ] Execute updated packaging script and verify icon display, final documentation/source assets, checksums and final source snapshot.
 - [ ] Actual version-to-version update/rollback has not been tested; defer to a separately versioned compatible build. Do not claim same-version reinstall as an update.
 - [ ] Finalize all required corresponding-source access and notices before distributing publicly.
 - [x] Verify new source commit uses azazev GitHub noreply identity.

@@ -9,6 +9,7 @@ LICENSES/BossModReborn-BSD-3-Clause.txt
 README.md
 THIRD_PARTY_NOTICES.md
 TROUBLESHOOTING.md
+assets/icon.png
 plugin/AnoBossBridge.deps.json
 plugin/AnoBossBridge.json
 release/DISTRIBUTION.md

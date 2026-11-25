@@ -21,6 +21,7 @@
     "DownloadLinkInstall": "https://github.com/azazev/SimBridge/releases/download/v0.8.0-beta.1/latest.zip",
     "DownloadLinkUpdate": "https://github.com/azazev/SimBridge/releases/download/v0.8.0-beta.1/latest.zip",
     "LastUpdate": 0,
-    "Changelog": "Initial experimental beta; eight FRU simulation integrations. See the release notes for limitations."
+    "Changelog": "Initial experimental beta; eight FRU simulation integrations. See the release notes for limitations.",
+    "IconUrl": "https://raw.githubusercontent.com/azazev/SimBridge/main/assets/icon.png"
   }
 ]
