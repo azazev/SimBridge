@@ -1,10 +1,8 @@
 # Changelog
 
-## [0.8.0-beta.1] — proposed, unpublished
+## [0.8.0-beta.1](https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1) — November 25, 2026
 
-**Status:** Private release preparation. This label does not imply a GitHub Release, repository feed, or tag already exists.
-
-The proposed first beta is based on the **v0.8.0 development baseline** validated on November 24, 2026.
+The first public beta is based on the **v0.8.0 development baseline** validated on November 24, 2026.
 
 ### Changes compared with earlier internal builds
 

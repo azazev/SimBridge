@@ -1,6 +1,6 @@
-# SimBridge beta staging status
+# Archived private staging checklist
 
-This is a **private release-preparation branch**, not a published release.
+This checklist records the state during private preparation. For the published beta and current installer feed, see [Public distribution](DISTRIBUTION.md).
 
 - Proposed public beta: `v0.8.0-beta.1`
 - Developer: `azazev`

@@ -1,6 +1,17 @@
 # SimBridge v0.8.0-beta.1 — build verification
 
-Date: 2026-11-24. Private staging; not a release announcement.
+## Public release downloads
+
+On November 25, 2026, unauthenticated HTTPS GETs followed the public GitHub release redirects and returned HTTP 200 for all three assets. SHA-256 values computed from the downloaded bytes matched the approved values.
+
+| Published file | SHA-256 |
+| --- | --- |
+| `latest.zip` | `4a86e9ea89d3071e16c931bc024d053e4ae02ba1b71c84d30548a4c7a5fc14a6` |
+| `SHA256SUMS.txt` | `ca4cbf48655e959357b74d5cbd56034fd469e888e12316570e71ad4bd6bfcc53` |
+| `SimBridge-v0.8.0-beta.1-source.zip` | `19e4145a7ee960587516b6d5ff841f8df6ed72d69630b84ae8958a70620ee8b0` |
+
+The tests below describe the November 24 private staging build and installer. An in-game installation from the public feed is a separate check.
+
 
 ## Tested build
 

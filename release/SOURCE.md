@@ -1,4 +1,4 @@
-# Source access — private distribution draft
+# Source access for v0.8.0-beta.1
 
 SimBridge v0.8.0-beta.1, developer azazev. SimBridge's own copyrightable contributions are licensed AGPL-3.0-or-later; see LICENSE and THIRD_PARTY_NOTICES.md.
 
@@ -6,11 +6,11 @@ The independently verified Windows build was made from SimBridge commit 0b011fb8
 
 ## SimBridge
 
-Planned release: https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1
+Release: https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1
 
-Planned source asset: https://github.com/azazev/SimBridge/releases/download/v0.8.0-beta.1/SimBridge-v0.8.0-beta.1-source.zip
+Source archive: https://github.com/azazev/SimBridge/releases/download/v0.8.0-beta.1/SimBridge-v0.8.0-beta.1-source.zip
 
-These URLs are planned, not currently published or accessible. The private packaging script prepares the source archive with build/install instructions, tests, license texts, and the reviewed source tree. Before public delivery, verify the tag points to the approved source, the source asset downloads without authentication, and all required corresponding source is available at no additional charge.
+The source archive is available without authentication. Its SHA-256 was verified against the approved release on November 25, 2026. See [public download verification](VERIFICATION.md#public-release-downloads).
 
 ## Upstream release source references
 
