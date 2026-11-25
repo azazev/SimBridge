@@ -4,7 +4,7 @@
 
 Developed by **azazev**.
 
-> **Release status:** v0.8.0-beta.1 is being staged privately. There is no published beta release or custom Dalamud repository URL yet.
+[v0.8.0-beta.1](https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1) is available through the SimBridge custom Dalamud repository.
 
 ## What it does
 
@@ -48,7 +48,13 @@ Developer Mode makes diagnostic controls and the logs-folder shortcut available.
 
 ## Installation
 
-Public installation instructions will be activated when a beta package and custom Dalamud repository are actually published. For the prepared instructions, see [INSTALLATION.md](INSTALLATION.md). **Do not use an unverified repository URL or rename the internal DLL yourself.**
+Add this URL under **Dalamud Settings → Experimental → Custom Plugin Repositories**.
+
+```text
+https://raw.githubusercontent.com/azazev/SimBridge/main/repo.json
+```
+
+Install **SimBridge** by **azazev** from the plugin installer. See [Installation and updates](INSTALLATION.md) for the full steps.
 
 ## Reporting issues
 
@@ -72,6 +78,4 @@ For source build instructions, see [BUILDING.md](BUILDING.md). The verified Wind
 
 All SimBridge features are free. If you would like to support development, optional donations are welcome on [Ko-fi](https://ko-fi.com/azazev). Donations are not required and do not unlock features or gameplay functionality.
 
-Public distribution is still pending final provenance, license-compliance and release review.
-
-For the proposed beta changes, see [CHANGELOG.md](CHANGELOG.md).
+For the beta changes, see [CHANGELOG.md](CHANGELOG.md).

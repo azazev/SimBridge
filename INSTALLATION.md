@@ -1,6 +1,6 @@
 # Installation and updates
 
-> **Not yet released.** These instructions are staged for review. As of this staging branch, there is **no live SimBridge custom repository URL, release download or public beta**.
+[SimBridge v0.8.0-beta.1](https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1) is available through the project's custom Dalamud repository. Dalamud displays the assembly version as **0.8.0.0**.
 
 ## Requirements
 
@@ -11,18 +11,19 @@ Install and enable the current compatible versions of:
 
 The v0.8.0 baseline was tested live with BossMod Reborn **7.5.8.10**, AnoMech **0.5.1.0**, and Dalamud API **15**. Exact compatibility can change after updates; consult [COMPATIBILITY.md](COMPATIBILITY.md).
 
-## Planned beta installation using a custom Dalamud repository
+## Install the public beta
 
-**These steps become actionable only after a public URL is announced in an official SimBridge release.**
+1. Enable AnoMech and BossMod Reborn. If you previously tested SimBridge, back up your settings, remove its development-plugin registration or old local repository, and uninstall any old installer copy. Keep the saved configuration.
+2. Open Dalamud Settings (`/xlsettings`) and go to **Experimental → Custom Plugin Repositories**.
+3. Paste this URL, click **+**, enable the entry and save.
 
-1. Install and enable both upstream dependencies in Dalamud.
-2. Open Dalamud settings and locate **Experimental → Custom Plugin Repositories**.
-3. Add the verified **SimBridge custom repository URL from the release announcement**. (No URL is active yet.)
-4. Open the Dalamud Plugin Installer; install **SimBridge** from that repository.
-5. Open `/simbridge` and run `/simbridge status`. Confirm that the dependencies are visible and that the compatibility checks have passed.
-6. Start a **fresh supported AnoMech simulation**.
+   ```text
+   https://raw.githubusercontent.com/azazev/SimBridge/main/repo.json
+   ```
 
-Avoid copying a guessed `repo.json` URL or installing a second, manually loaded copy alongside the repository-managed plugin.
+4. Open the Dalamud Plugin Installer (`/xlplugins`), refresh the list and install **SimBridge** by **azazev**. Check that it is enabled.
+5. Open `/simbridge` and run `/simbridge status`. Check that the dependencies are detected and review the compatibility results.
+6. With the bridge enabled, start a fresh [supported simulation](COMPATIBILITY.md).
 
 ## Development installation (for designated testers only)
 
@@ -32,7 +33,7 @@ The internal `AnoBossBridge` name is intentionally preserved for configuration i
 
 ## Updating
 
-Once a public custom repository is available, use Dalamud's plugin update mechanism. If a relevant upstream dependency is reloaded mid-simulation, end that run and start a new one; SimBridge does not resume halfway through.
+Use Dalamud’s plugin update mechanism. If an upstream dependency reloads during a simulation, finish or exit that run and start a fresh one. Version-to-version update and rollback testing awaits a second compatible release.
 
 ## Uninstalling
 
