@@ -32,23 +32,23 @@ The verified live configuration for this development baseline was **AnoMech 0.5.
 
 ### Futures Rewritten (Ultimate) — FRU
 
-- Diamond Dust
-- Light Rampant
-- Ultimate Relativity
-- Apocalypse
-- Darklit Dragonsong
-- Crystallize Time
-- Fulgent Blade
-- Paradise Regained
+- P2 - Diamond Dust
+- P2 - Light Rampant
+- P3 - Ultimate Relativity
+- P3 - Apocalypse
+- P4 - Darklit Dragonsong
+- P4 - Crystallize Time
+- P5 - Fulgent Blade
+- P5 - Paradise Regained
 
 ### The Weapon's Refrain (Ultimate) — UWU
 
-- Ultimate Predation
-- Ultimate Suppression
+- P4 - Ultimate Predation
+- P4 - Ultimate Suppression
 
 ### The Unending Coil of Bahamut (Ultimate) — UCoB
 
-- P5 Exaflares
+- P5 - Exaflares
 
 This is a list of supported *integration scenarios*, not a claim of full strategy or role coverage. See [Compatibility and known limitations](COMPATIBILITY.md).
 
