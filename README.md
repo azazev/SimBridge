@@ -32,12 +32,14 @@ The verified live configuration for this development baseline was **AnoMech 0.5.
 
 ### Futures Rewritten (Ultimate) — FRU
 
-| Phase | Simulation |
-| --- | --- |
-| P2 | Diamond Dust, Light Rampant |
-| P3 | Ultimate Relativity, Apocalypse |
-| P4 | Darklit Dragonsong, Crystallize Time |
-| P5 | Fulgent Blade, Paradise Regained |
+- Diamond Dust
+- Light Rampant
+- Ultimate Relativity
+- Apocalypse
+- Darklit Dragonsong
+- Crystallize Time
+- Fulgent Blade
+- Paradise Regained
 
 ### The Weapon's Refrain (Ultimate) — UWU
 
