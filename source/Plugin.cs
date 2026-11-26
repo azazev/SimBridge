@@ -154,7 +154,7 @@ public sealed class Plugin : IDalamudPlugin
                     }
                     break;
                 default:
-                    Say("Use /simbridge for controls, or enable, disable, status, start, stop. v0.8.0: FRU Paradise Regained, Light Rampant, Diamond Dust, Apocalypse, Ultimate Relativity, Darklit Dragonsong, Crystallize Time and Fulgent Blade.");
+                    Say("Use /simbridge for controls, or enable, disable, status, start, stop. v0.9.0: FRU Paradise Regained, Light Rampant, Diamond Dust, Apocalypse, Ultimate Relativity, Darklit Dragonsong, Crystallize Time and Fulgent Blade. UWU Ultimate Predation and Ultimate Suppression. UCoB P5 Exaflares.");
                     break;
             }
         }
@@ -196,7 +196,7 @@ public sealed class Plugin : IDalamudPlugin
     {
         if (!windowOpen) return;
         ImGui.SetNextWindowSize(new Vector2(480, 210), ImGuiCond.FirstUseEver);
-        var visible = ImGui.Begin("SimBridge v0.8.0###AnoBossBridge", ref windowOpen);
+        var visible = ImGui.Begin("SimBridge v0.9.0###AnoBossBridge", ref windowOpen);
         try
         {
             if (!visible) return;
@@ -244,7 +244,7 @@ public sealed class Plugin : IDalamudPlugin
         $"bridge-{DateTime.UtcNow:yyyyMMdd-HHmmssfff}-{Guid.NewGuid().ToString("N")[..6]}.{extension}");
 
     private void Say(string message) => chat.Print($"[SimBridge] {message}");
-    private object BridgeStatus() => new { Version = "0.8.0", activation.Enabled, activation.Status, Roles = activation.RoleDiagnostics, SimulationLock = activation.LockDiagnostics, Compatibility = activation.CompatibilityDiagnostics };
+    private object BridgeStatus() => new { Version = "0.9.0", activation.Enabled, activation.Status, Roles = activation.RoleDiagnostics, Exaflares = activation.ExaflaresDiagnostics, SimulationLock = activation.LockDiagnostics, Compatibility = activation.CompatibilityDiagnostics };
 
     private object Capture(Probe source)
     {

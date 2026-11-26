@@ -11,9 +11,9 @@ $plugin = (Resolve-Path -LiteralPath $PluginDirectory).ProviderPath
 $out = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($OutputDirectory)
 if (Test-Path -LiteralPath $out) { throw 'Output directory already exists; use a new -OutputDirectory.' }
 $expected = [ordered]@{
-    'AnoBossBridge.dll' = '2ee6b505d985121a8c9f37c43eeec1b8ce32c36b909fa0a3710d8eff39aa5993'
-    'AnoBossBridge.deps.json' = '2bd145ab4e7c34da4dc5b080cf8bb3dc26ff995772bbc6424d17e77e05199c81'
-    'AnoBossBridge.json' = 'e307627c2253c59ea6989269d3e016156c86985a8d0bdb8e3460851c5676ec71'
+    'AnoBossBridge.dll' = '9fc558a298736ba1817062fcf0ed7221a873ce155abaac7f7ceb06610783e48d'
+    'AnoBossBridge.deps.json' = '279ce3716831af5981df8427361b30fdaa3f5c8e014e450d65b2c391893cb8a7'
+    'AnoBossBridge.json' = '4f03ec37cb56756024a8b334e64079b8300e60ce834bea0e8619258a6c70265b'
 }
 foreach ($name in $expected.Keys) {
     $path = Join-Path $plugin $name
@@ -33,7 +33,7 @@ if ($entry -isnot [System.Management.Automation.PSCustomObject]) { throw 'Expect
 foreach ($property in @('DownloadLinkInstall','DownloadLinkUpdate','IconUrl','LastUpdate','IsTestingExclusive','IsHide','Name','InternalName','AssemblyVersion','DalamudApiLevel','ApplicableVersion','Author')) {
     if ($null -eq $entry.PSObject.Properties[$property]) { throw "Missing store property: $property" }
 }
-foreach ($key in @('Name','InternalName','AssemblyVersion','DalamudApiLevel','ApplicableVersion','Author')) {
+foreach ($key in @('Name','InternalName','AssemblyVersion','DalamudApiLevel','ApplicableVersion','Author','Changelog')) {
     if ($entry.$key -ne $manifest.$key) { throw "Manifest/feed mismatch: $key" }
 }
 if ([Reflection.AssemblyName]::GetAssemblyName((Join-Path $plugin 'AnoBossBridge.dll')).Version.ToString() -ne $manifest.AssemblyVersion) { throw 'Assembly version mismatch' }
@@ -86,7 +86,7 @@ try {
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'SOURCE.md') -Destination (Join-Path $binaryStage 'SOURCE.md')
     foreach ($path in $sourceFiles) { Copy-RelativeFile $root $sourceStage $path }
     $binaryZip = Join-Path $result 'latest.zip'
-    $sourceZip = Join-Path $result 'SimBridge-v0.8.0-beta.1-source.zip'
+    $sourceZip = Join-Path $result 'SimBridge-v0.9.0-source.zip'
     [IO.Compression.ZipFile]::CreateFromDirectory($binaryStage,$binaryZip,[IO.Compression.CompressionLevel]::Optimal,$false)
     [IO.Compression.ZipFile]::CreateFromDirectory($sourceStage,$sourceZip,[IO.Compression.CompressionLevel]::Optimal,$false)
     Verify-ZipEntries $binaryZip (@($expected.Keys) + $noticeFiles + @('SOURCE.md')) $true
@@ -108,16 +108,21 @@ try {
     if (-not $localJson.TrimStart().StartsWith('[') -or $localEntries.Count -ne 1 -or $localEntries[0] -isnot [System.Management.Automation.PSCustomObject]) { throw 'Local feed must be an array containing exactly one store object' }
     if ($localEntries[0].DownloadLinkInstall -ne $localUrl -or $localEntries[0].DownloadLinkUpdate -ne $localUrl -or $localEntries[0].InternalName -ne $manifest.InternalName -or $localEntries[0].IconUrl -ne $localIcon) { throw 'Local feed round-trip verification failed' }
     [IO.File]::WriteAllText((Join-Path $result 'repo.local.json'),$localJson,$utf8)
-    $checksums = @(Get-ChildItem -LiteralPath $result -File | Sort-Object Name | ForEach-Object {
+    $checksums = @(Get-ChildItem -LiteralPath $result -File -Filter *.zip | Sort-Object Name | ForEach-Object {
         "$((Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant())  $($_.Name)"
     })
     [IO.File]::WriteAllLines((Join-Path $result 'SHA256SUMS.txt'),[string[]]$checksums,$utf8)
     if (Test-Path -LiteralPath $out) { throw 'Output directory appeared during packaging; choose a new output directory.' }
+    $stageRoot = [IO.Path]::GetFullPath($temp) + [IO.Path]::DirectorySeparatorChar
+    if (![IO.Path]::GetFullPath($result).StartsWith($stageRoot,[StringComparison]::OrdinalIgnoreCase) -or
+        [IO.Path]::GetDirectoryName($out) -ne [IO.Path]::GetFullPath($parent)) { throw 'Unexpected staging path' }
     Move-Item -LiteralPath $result -Destination $out
     Write-Output 'PASS: all three original plugin payload hashes, manifest identity and ZIP entry lists verified.'
     Get-ChildItem -LiteralPath $out -File | Select-Object Name,Length
     Get-Content -LiteralPath (Join-Path $out 'SHA256SUMS.txt')
     Write-Output 'PRIVATE DRAFT ONLY. No installed plugins or remote repository changed.'
 } finally {
+    $tempParent = [IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($temp))
+    if ($tempParent -ne [IO.Path]::GetFullPath($parent) -or [IO.Path]::GetFileName($temp) -notmatch '^SimBridge-stage-[a-fA-F0-9]{32}$') { throw 'Unexpected temporary path' }
     if (Test-Path -LiteralPath $temp) { Remove-Item -LiteralPath $temp -Recurse -Force }
 }

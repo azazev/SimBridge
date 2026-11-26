@@ -90,6 +90,44 @@ Add(core, B("BossMod.StateMachine+State"), "ID NextStates Duration");
 
 foreach (var scenario in Compatibility.Scenarios)
 {
+    if (scenario == Activation.ExaflaresScenario)
+    {
+        const string ucob = Activation.UcobNamespace;
+        const string anoUcob = "AnoMech.Scenarios.Ucob.";
+        Add(scenario, A(scenario), "laneHelpers");
+        Add(scenario, A(anoUcob + "UcobConstants+BNpcBaseId"), "BahamutPrime Helper");
+        Add(scenario, A(anoUcob + "UcobConstants+ActionId"), "Exaflare ExaflareFirst ExaflareRest");
+        Add(scenario, A(anoUcob + "P5Exaflares.UcobP5ExaflaresState"), "BossCastAt PairCount");
+        Add(scenario, B(ucob + "UCOB"), ".ctor _bahamutPrime");
+        Add(scenario, B(ucob + "UCOB"), "Twintania BahamutPrime", true);
+        Add(scenario, B(ucob + "OID"), "Twintania BahamutPrime Helper");
+        Add(scenario, B(ucob + "AID"), "Exaflare ExaflareFirst ExaflareRest");
+        Add(scenario, B(ucob + "UCOBStates"), "Phase5 P5Exaflare", true);
+        Add(scenario, B(ucob + "P5Exaflare"), "OnCastStarted OnEventCast NumCasts Lines");
+        Add(scenario, B("BossMod.Actor"), "IsDestroyed IsTargetable");
+        Add(scenario, B("BossMod.StateMachine"), "_activation _curTime");
+        continue;
+    }
+    if (scenario is Activation.PredationScenario or Activation.SuppressionScenario)
+    {
+        const string uwu = "BossMod.Stormblood.Ultimate.UWU.";
+        Add(scenario, A(scenario));
+        Add(scenario, B(uwu + "UWU"), ".ctor _mainIfrit");
+        Add(scenario, B(uwu + "UWU"), "Garuda Ifrit Titan Ultima UpdateModule", true);
+        Add(scenario, B(uwu + "OID"), "Garuda Ifrit Titan UltimaWeapon");
+        if (scenario == Activation.SuppressionScenario)
+        {
+            Add(scenario, B(uwu + "OID"), "GarudaSister");
+            Add(scenario, B(uwu + "AID"), "UltimateSuppression EruptionAOE MistralSongAdds GreatWhirlwind FeatherRain LightPillar LightPillarAOE AetherochemicalLaserCenter AetherochemicalLaserLeft AetherochemicalLaserRight Mesohigh FlamingCrush TankPurge");
+            Add(scenario, B(uwu + "UWUStates"), "Phase5Ultima P5Suppression", true);
+        }
+        else
+        {
+            Add(scenario, B(uwu + "AID"), "UltimatePredation CrimsonCyclone CrimsonCycloneCross");
+            Add(scenario, B(uwu + "UWUStates"), "Phase4LahabreaUltima P4Predation", true);
+        }
+        continue;
+    }
     var part = scenario.Split('.')[^2];
     Add(scenario, A(scenario), "AiStrats");
     Add(scenario, A(scenario[..^8] + "Ai"), scenario is Activation.FulgentScenario or Activation.ParadiseScenario ? "Name" : "Name Group");

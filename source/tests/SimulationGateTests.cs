@@ -5,9 +5,37 @@ internal static class SimulationGateTests
     private static void Check(bool ok, string message) { if (!ok) throw new Exception(message); }
     internal static void Run()
     {
+        var sistersGame = new Game();
+        var sistersWorld = new World();
+        sistersGame.World.Children.Add(new SimEnemy(10, 0x2213));
+        sistersGame.World.Children.Add(new SimEnemy(11, 0x2213));
+        sistersWorld.Actors.Add(new Actor(11, 0x2213));
+        if (Activation.SimActorsReady(sistersGame, sistersWorld, 0x2213, 2)) throw new Exception("Missing sister accepted.");
+        sistersWorld.Actors.Add(new Actor(10, 0x2213));
+        if (!Activation.SimActorsReady(sistersGame, sistersWorld, 0x2213, 2)) throw new Exception("Reversed sister order rejected.");
+        sistersWorld.Actors.Add(new Actor(12, 0x2213));
+        if (Activation.SimActorsReady(sistersGame, sistersWorld, 0x2213, 2)) throw new Exception("Unrelated sister accepted.");
+
+        var lanes = new ExaflareScenario();
+        var arena = new World();
+        arena.Actors.Add(new Actor(7, 0x18D6)); // extra shared-OID helper observed in the live recording
+        for (uint i = 1; i <= 6; ++i)
+        {
+            lanes.laneHelpers.Add(new SimEnemy(i, 0x18D6));
+            arena.Actors.Add(new Actor(i, 0x18D6));
+        }
+        Check(Activation.ExaflareLanesReady(lanes, arena), "Six identified lanes plus a seventh helper accepted");
+        arena.Actors.RemoveAt(6);
+        Check(!Activation.ExaflareLanesReady(lanes, arena), "Unrelated helper cannot replace a missing lane");
+        arena.Actors.Add(new Actor(6, 0x2213));
+        Check(!Activation.ExaflareLanesReady(lanes, arena), "Correct instance ID with wrong OID rejected");
+        lanes.laneHelpers[5] = lanes.laneHelpers[0];
+        Check(!Activation.ExaflareLanesReady(lanes, arena), "Duplicate lane identity rejected");
+        lanes.laneHelpers[5] = null;
+        Check(!Activation.ExaflareLanesReady(lanes, arena), "Unspawned lane rejected");
         string[] allowed = [Activation.Scenario, Activation.DarklitScenario, Activation.RelativityScenario,
             Activation.CrystallizeScenario, Activation.DiamondScenario, Activation.FulgentScenario,
-            Activation.LightRampantScenario, Activation.ParadiseScenario];
+            Activation.LightRampantScenario, Activation.ParadiseScenario, Activation.ExaflaresScenario];
         Check(allowed.All(Activation.IsSupported) && !Activation.IsSupported(null)
             && !Activation.IsSupported("AnoMech.Scenarios.Fru.P1UtopianSky.FruP1UtopianSkyScenario")
             && !Activation.IsSupported("AnoMech.Scenarios.Umad.P1TeleTrouncing.UmadP1TeleTrouncingScenario"), "Exact scenario allowlist, not encounter names");
@@ -105,6 +133,7 @@ internal static class SimulationGateTests
     }
 
     internal sealed class Events { public double Elapsed = 0; }
+    private sealed class ExaflareScenario { public List<SimEnemy?> laneHelpers = []; }
     internal sealed class Game { public object? ActiveScenario; public string Status = "Offline"; public SimWorld World = new(); public Events Events = new(); public bool Paused = false; public double EventTimeScale = 1; }
     internal sealed class SimWorld { public List<SimEnemy> Children = []; }
     internal sealed class SimEnemy(ulong id, uint oid) { public ulong EntityId = id; public uint BNpcBaseId = oid; }

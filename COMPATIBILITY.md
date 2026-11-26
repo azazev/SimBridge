@@ -1,5 +1,11 @@
 # Compatibility and known limitations
 
+## v0.9.0 candidate
+
+The 0.9.0.0 Windows assembly passed ten offline groups and fourteen installed compatibility groups on BossMod Reborn 7.5.8.10 and 7.5.8.11 with AnoMech 0.5.1.0 and Dalamud 15.0.4.1 (API 15). The existing 324 member contracts include the two UWU scenarios and UCoB P5 Exaflares. Private gameplay coverage includes Predation, Suppression, Exaflares and a supported-to-unsupported simulation transition. Role and strategy variation coverage remains partial.
+
+## First public beta reference
+
 This document describes the **tested v0.8.0 development baseline** proposed for the first public beta. A supported scenario is not necessarily fully validated across every role, random outcome, or strategy.
 
 ## Verified environment

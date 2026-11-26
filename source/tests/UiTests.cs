@@ -25,7 +25,7 @@ internal static class UiTests
         Check(commands.Commands.ContainsKey("/simbridge") && !commands.Commands.ContainsKey("/anobridge"), "Only renamed command registered");
         host.UiBuilder.Main(); host.UiBuilder.Frame();
         Check(Field<bool>(p, "windowOpen"), "Main callback opens window");
-        Check(ImGui.Title == "SimBridge v0.8.0###AnoBossBridge" && !Field<bool>(p, "devMode") && ImGui.Buttons.Count == 0, "New title and diagnostics hidden by default");
+        Check(ImGui.Title == "SimBridge v0.9.0###AnoBossBridge" && !Field<bool>(p, "devMode") && ImGui.Buttons.Count == 0, "New title and diagnostics hidden by default");
         ImGui.Close = true; host.UiBuilder.Frame();
         Check(!Field<bool>(p, "windowOpen") && activation.Enabled, "Closing window keeps bridge armed");
         host.UiBuilder.Config(); host.UiBuilder.Frame();
@@ -52,7 +52,7 @@ internal static class UiTests
         ImGui.Press = "Stop diagnostics"; host.UiBuilder.Frame(); host.UiBuilder.Frame();
         Check(Field<StreamWriter?>(p, "output") == null && activation.Enabled, "Stopping diagnostics leaves bridge enabled");
         using (var json = JsonDocument.Parse(File.ReadLines(path).First()))
-            Check(json.RootElement.GetProperty("Bridge").GetProperty("Version").GetString() == "0.8.0", "Recorded version updated");
+            Check(json.RootElement.GetProperty("Bridge").GetProperty("Version").GetString() == "0.9.0", "Recorded version updated");
         using (File.Open(path, FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
         commands.Send("start"); host.UiBuilder.Frame();
         path = Field<string>(p, "lastPath");
@@ -198,7 +198,7 @@ namespace AnoBossBridge
         public bool Enabled { get; private set; }
         public bool ThrowOnTick;
         public string Status => Enabled ? "Armed" : "Disabled";
-        public object? RoleDiagnostics => null;
+        public object? RoleDiagnostics => null; public object? ExaflaresDiagnostics => null;
         public object? LockDiagnostics => null; public object? CompatibilityDiagnostics => null;
         public void Enable() => Enabled = true;
         public void Tick() { if (ThrowOnTick) throw new InvalidOperationException("test runtime error"); }
