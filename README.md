@@ -4,15 +4,15 @@
 
 Developed by **azazev**.
 
-[v0.8.0-beta.1](https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1) is available through the SimBridge custom Dalamud repository.
+[v0.9.0](https://github.com/azazev/SimBridge/releases/tag/v0.9.0) is available through the SimBridge custom Dalamud repository.
 
-The private v0.9.0 candidate adds Ultimate Predation and Ultimate Suppression (UWU), and P5 Exaflares (UCoB), alongside the eight FRU simulations below. These three additions were tested with BossMod Reborn 7.5.8.11 and AnoMech 0.5.1.0.
+The v0.9.0 release adds Ultimate Predation and Ultimate Suppression (UWU), and P5 Exaflares (UCoB), alongside the eight FRU simulations below. These three additions were tested with BossMod Reborn 7.5.8.11 and AnoMech 0.5.1.0.
 
 ## What it does
 
 SimBridge lets supported BossMod Reborn encounter modules operate within selected AnoMech simulations. It reuses the upstream module's existing encounter guidance.
 
-- Supports eight **Futures Rewritten (Ultimate)** simulations in the initial beta scope.
+- Supports eleven simulations across Futures Rewritten (Ultimate), The Weapon's Refrain (Ultimate), and The Unending Coil of Bahamut (Ultimate).
 - Connects only when the corresponding simulation and supported BossMod module can be positively identified.
 - Keeps unsupported BossMod modules out of simulations when its simulation-protection checks succeed.
 - Recovers from supported dependency reload scenarios; reconnecting during a run requires a **fresh simulation**.
@@ -26,11 +26,11 @@ SimBridge lets supported BossMod Reborn encounter modules operate within selecte
 - [AnoMech](https://github.com/anomek/AnoMech)
 - [BossMod Reborn](https://github.com/FFXIV-CombatReborn/BossmodReborn)
 
-The verified live configuration for this development baseline was **AnoMech 0.5.1.0** and **BossMod Reborn 7.5.8.10**. Compatibility checks can accept other versions, but passing checks does not guarantee future behavior.
+The verified live configuration for this development baseline was **AnoMech 0.5.1.0** and **BossMod Reborn 7.5.8.11**. Compatibility checks can accept other versions, but passing checks does not guarantee future behavior.
 
 ## Supported content
 
-The first beta focuses on these FRU scenarios:
+Supported Futures Rewritten (Ultimate) simulations:
 
 | Phase | Simulation |
 | --- | --- |
