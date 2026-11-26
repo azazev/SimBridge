@@ -1,6 +1,6 @@
 # Installation and updates
 
-[SimBridge v0.8.0-beta.1](https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1) is available through the project's custom Dalamud repository. Dalamud displays the assembly version as **0.8.0.0**.
+[SimBridge v0.9.0](https://github.com/azazev/SimBridge/releases/tag/v0.9.0) is available through the project's custom Dalamud repository. Dalamud displays the assembly version as **0.9.0.0**.
 
 ## Requirements
 
@@ -9,7 +9,7 @@ Install and enable the current compatible versions of:
 2. [AnoMech](https://github.com/anomek/AnoMech)
 3. [BossMod Reborn](https://github.com/FFXIV-CombatReborn/BossmodReborn)
 
-The v0.8.0 baseline was tested live with BossMod Reborn **7.5.8.10**, AnoMech **0.5.1.0**, and Dalamud API **15**. Exact compatibility can change after updates; consult [COMPATIBILITY.md](COMPATIBILITY.md).
+The v0.9.0 development baseline was tested live with BossMod Reborn **7.5.8.11**, AnoMech **0.5.1.0**, and Dalamud API **15**. Exact compatibility can change after updates; consult [COMPATIBILITY.md](COMPATIBILITY.md).
 
 ## Install the public beta
 
@@ -33,7 +33,7 @@ The internal `AnoBossBridge` name is intentionally preserved for configuration i
 
 ## Updating
 
-Use Dalamud’s plugin update mechanism. If an upstream dependency reloads during a simulation, finish or exit that run and start a fresh one. Version-to-version update and rollback testing awaits a second compatible release.
+Use Dalamud’s plugin update mechanism. If an upstream dependency reloads during a simulation, finish or exit that run and start a fresh one. The private installer test verified an in-place update from 0.8.0.0 to 0.9.0.0 and a rollback by reinstalling 0.8.0.0 with the saved configuration.
 
 ## Uninstalling
 
