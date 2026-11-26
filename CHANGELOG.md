@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.0
+
+New AnoMech simulations
+- The Weapon's Refrain (Ultimate): Ultimate Predation and Ultimate Suppression.
+- The Unending Coil of Bahamut (Ultimate): P5 Exaflares.
+
+SimBridge now supports 11 simulations. All three additions use BossMod Reborn's native guidance.
+
 ## [0.8.0-beta.1](https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1) — November 25, 2026
 
 The first public beta is based on the **v0.8.0 development baseline** validated on November 24, 2026.

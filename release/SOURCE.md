@@ -1,16 +1,15 @@
-# Source access for v0.8.0-beta.1
+# Source access for SimBridge v0.9.0
 
-SimBridge v0.8.0-beta.1, developer azazev. SimBridge's own copyrightable contributions are licensed AGPL-3.0-or-later; see LICENSE and THIRD_PARTY_NOTICES.md.
+Developer: azazev. The private installer kit contains the matching SimBridge-v0.9.0-source.zip. See BUILDING.md in that archive for the Windows build and test command. SimBridge's own contributions are licensed AGPL-3.0-or-later. License and attribution files accompany the plugin.
 
-The independently verified Windows build was made from SimBridge commit 0b011fb8bd1333154637ae0a422d2e80013bfb48. Subsequent changes are documentation/distribution preparation only; the plugin payload hashes remain the same.
+The release destination after publication is https://github.com/azazev/SimBridge/releases/tag/v0.9.0. While the candidate is private, obtain the source from the same kit as the binary.
 
-## SimBridge
+The installed assemblies used for v0.9.0 report these additional source revisions:
 
-Release: https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1
+- BossMod Reborn 7.5.8.11: https://github.com/FFXIV-CombatReborn/BossmodReborn/tree/a4fd07db9e47ebce2f8abfeb88c072a710ea6e37
+- AnoMech 0.5.1.0: https://github.com/anomek/AnoMech/tree/729b76e4141e5fe6d19eb4f835a5ca5b06ebf07b
 
-Source archive: https://github.com/azazev/SimBridge/releases/download/v0.8.0-beta.1/SimBridge-v0.8.0-beta.1-source.zip
-
-The source archive is available without authentication. Its SHA-256 was verified against the approved release on November 25, 2026. See [public download verification](VERIFICATION.md#public-release-downloads).
+The historical tag and source inventory below includes the previous BossMod build tested for compatibility.
 
 ## Upstream release source references
 

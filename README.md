@@ -6,6 +6,8 @@ Developed by **azazev**.
 
 [v0.8.0-beta.1](https://github.com/azazev/SimBridge/releases/tag/v0.8.0-beta.1) is available through the SimBridge custom Dalamud repository.
 
+The private v0.9.0 candidate adds Ultimate Predation and Ultimate Suppression (UWU), and P5 Exaflares (UCoB), alongside the eight FRU simulations below. These three additions were tested with BossMod Reborn 7.5.8.11 and AnoMech 0.5.1.0.
+
 ## What it does
 
 SimBridge lets supported BossMod Reborn encounter modules operate within selected AnoMech simulations. It reuses the upstream module's existing encounter guidance.

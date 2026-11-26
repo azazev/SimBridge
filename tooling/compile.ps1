@@ -3,7 +3,7 @@ param(
     [ValidateSet('BuildAndValidate','BuildOnly','ValidateOnly')]
     [string]$Mode = 'BuildAndValidate',
     [ValidateNotNullOrEmpty()]
-    [string[]]$BossModVersions = @('7.5.8.9','7.5.8.10')
+    [string[]]$BossModVersions = @('7.5.8.10','7.5.8.11')
 )
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path $PSScriptRoot -Parent
@@ -28,9 +28,9 @@ if (-not (Test-Path -LiteralPath $globals -PathType Leaf)) { throw 'Missing trac
 $attributes = Join-Path $PSScriptRoot 'AssemblyInfo.cs'
 @'
 using System.Reflection;
-[assembly: AssemblyVersion("0.8.0.0")]
-[assembly: AssemblyFileVersion("0.8.0.0")]
-[assembly: AssemblyInformationalVersion("0.8.0-experimental")]
+[assembly: AssemblyVersion("0.9.0.0")]
+[assembly: AssemblyFileVersion("0.9.0.0")]
+[assembly: AssemblyInformationalVersion("0.9.0")]
 [assembly: System.Runtime.Versioning.TargetFramework(".NETCoreApp,Version=v10.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatform("windows7.0")]
 '@ | Set-Content -LiteralPath $attributes -Encoding utf8

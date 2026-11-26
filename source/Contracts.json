@@ -2546,6 +2546,671 @@
           }
         ]
       }
+    ],
+    "AnoMech.Scenarios.Uwu.UltimatePredation.UltimatePredationScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Uwu.UltimatePredation.UltimatePredationScenario",
+        "Members": []
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UWU.UWU",
+        "Members": [
+          {
+            "Name": ".ctor",
+            "Shapes": [
+              "M:Private, HideBySig, SpecialName, RTSpecialName:0:void(BossMod.WorldState,BossMod.Actor,System.ValueTuple\u00602\u003CBossMod.WPos,BossMod.ArenaBoundsCustom\u003E)",
+              "M:Public, HideBySig, SpecialName, RTSpecialName:0:void(BossMod.WorldState,BossMod.Actor)"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_mainIfrit",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Garuda",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "37090AB6D5DF2AEA12FF95ED1C347A46B8A0B6C138424C0E4C0F6F51453046A0"
+            ]
+          },
+          {
+            "Name": "Ifrit",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "006E5EE49B028710EE295F2CBF8DCA452B49F5CB2436170723ECE21FC76439EC"
+            ]
+          },
+          {
+            "Name": "Titan",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "01C525A90643DD422E7D255BCDC390E1FD7B08F284C2A5C9F18A42FA2F0C4977"
+            ]
+          },
+          {
+            "Name": "Ultima",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "EA256BB22E276C615731C04FADD29828B2FAFA80C3882AC5A42F51254DF68D33"
+            ]
+          },
+          {
+            "Name": "UpdateModule",
+            "Shapes": [
+              "M:Family, Virtual, HideBySig:0:System.Void()"
+            ],
+            "Bodies": [
+              "E75B9F20D3238C51D77F52992E72A47E7E513D1D3C204861BA7D45BE7CD1052C"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UWU.OID",
+        "Members": [
+          {
+            "Name": "Garuda",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.OID:Public, Static, Literal, HasDefault:8722"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Ifrit",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.OID:Public, Static, Literal, HasDefault:8730"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Titan",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.OID:Public, Static, Literal, HasDefault:8727"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "UltimaWeapon",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.OID:Public, Static, Literal, HasDefault:8734"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UWU.AID",
+        "Members": [
+          {
+            "Name": "UltimatePredation",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11126"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "CrimsonCyclone",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11103"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "CrimsonCycloneCross",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11104"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UWU.UWUStates",
+        "Members": [
+          {
+            "Name": "Phase4LahabreaUltima",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32)"
+            ],
+            "Bodies": [
+              "D367CA4A31A2D43413509388D3C619D51C23FC5C4853B536A858B84CE37680F3"
+            ]
+          },
+          {
+            "Name": "P4Predation",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "ADF222AC8347365A48FFDF716C7F5B400E07C362742C1C895A420BD05767AE98"
+            ]
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Uwu.UltimateSuppression.UltimateSuppressionScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Uwu.UltimateSuppression.UltimateSuppressionScenario",
+        "Members": []
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UWU.UWU",
+        "Members": [
+          {
+            "Name": ".ctor",
+            "Shapes": [
+              "M:Private, HideBySig, SpecialName, RTSpecialName:0:void(BossMod.WorldState,BossMod.Actor,System.ValueTuple\u00602\u003CBossMod.WPos,BossMod.ArenaBoundsCustom\u003E)",
+              "M:Public, HideBySig, SpecialName, RTSpecialName:0:void(BossMod.WorldState,BossMod.Actor)"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_mainIfrit",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Garuda",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "37090AB6D5DF2AEA12FF95ED1C347A46B8A0B6C138424C0E4C0F6F51453046A0"
+            ]
+          },
+          {
+            "Name": "Ifrit",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "006E5EE49B028710EE295F2CBF8DCA452B49F5CB2436170723ECE21FC76439EC"
+            ]
+          },
+          {
+            "Name": "Titan",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "01C525A90643DD422E7D255BCDC390E1FD7B08F284C2A5C9F18A42FA2F0C4977"
+            ]
+          },
+          {
+            "Name": "Ultima",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "EA256BB22E276C615731C04FADD29828B2FAFA80C3882AC5A42F51254DF68D33"
+            ]
+          },
+          {
+            "Name": "UpdateModule",
+            "Shapes": [
+              "M:Family, Virtual, HideBySig:0:System.Void()"
+            ],
+            "Bodies": [
+              "E75B9F20D3238C51D77F52992E72A47E7E513D1D3C204861BA7D45BE7CD1052C"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UWU.OID",
+        "Members": [
+          {
+            "Name": "Garuda",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.OID:Public, Static, Literal, HasDefault:8722"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Ifrit",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.OID:Public, Static, Literal, HasDefault:8730"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Titan",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.OID:Public, Static, Literal, HasDefault:8727"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "UltimaWeapon",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.OID:Public, Static, Literal, HasDefault:8734"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "GarudaSister",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.OID:Public, Static, Literal, HasDefault:8723"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UWU.AID",
+        "Members": [
+          {
+            "Name": "UltimateSuppression",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11597"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "EruptionAOE",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11098"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "MistralSongAdds",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11083"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "GreatWhirlwind",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11073"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "FeatherRain",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11085"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "LightPillar",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11138"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "LightPillarAOE",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11139"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "AetherochemicalLaserCenter",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11140"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "AetherochemicalLaserLeft",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11142"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "AetherochemicalLaserRight",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11141"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Mesohigh",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11081"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "FlamingCrush",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11101"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "TankPurge",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UWU.AID:Public, Static, Literal, HasDefault:11143"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UWU.UWUStates",
+        "Members": [
+          {
+            "Name": "Phase5Ultima",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32)"
+            ],
+            "Bodies": [
+              "1EF90A3353D042F7CCFE22FE4786EB068159DF01D35CE2402251A5A5C07F723B"
+            ]
+          },
+          {
+            "Name": "P5Suppression",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "55BCCC47EF52311B538F15BEDA38049025964C2362E8E334DAA49264CC6B5E23"
+            ]
+          }
+        ]
+      }
+    ],
+    "AnoMech.Scenarios.Ucob.P5Exaflares.UcobP5ExaflaresScenario": [
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Ucob.P5Exaflares.UcobP5ExaflaresScenario",
+        "Members": [
+          {
+            "Name": "laneHelpers",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CAnoMech.Core.SimObjects.SimEnemy\u003E:Private, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Ucob.UcobConstants\u002BBNpcBaseId",
+        "Members": [
+          {
+            "Name": "BahamutPrime",
+            "Shapes": [
+              "F:System.UInt32:Public, Static, Literal, HasDefault:8168"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Helper",
+            "Shapes": [
+              "F:System.UInt32:Public, Static, Literal, HasDefault:6358"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Ucob.UcobConstants\u002BActionId",
+        "Members": [
+          {
+            "Name": "Exaflare",
+            "Shapes": [
+              "F:System.UInt32:Public, Static, Literal, HasDefault:9967"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ExaflareFirst",
+            "Shapes": [
+              "F:System.UInt32:Public, Static, Literal, HasDefault:9968"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ExaflareRest",
+            "Shapes": [
+              "F:System.UInt32:Public, Static, Literal, HasDefault:9969"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "AnoMech",
+        "Type": "AnoMech.Scenarios.Ucob.P5Exaflares.UcobP5ExaflaresState",
+        "Members": [
+          {
+            "Name": "BossCastAt",
+            "Shapes": [
+              "F:System.Single:Public, Static, Literal, HasDefault:3"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "PairCount",
+            "Shapes": [
+              "F:System.Int32:Public, Static, Literal, HasDefault:3"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UCOB.UCOB",
+        "Members": [
+          {
+            "Name": ".ctor",
+            "Shapes": [
+              "M:Public, HideBySig, SpecialName, RTSpecialName:0:void(BossMod.WorldState,BossMod.Actor)"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_bahamutPrime",
+            "Shapes": [
+              "F:BossMod.Actor:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Twintania",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "37090AB6D5DF2AEA12FF95ED1C347A46B8A0B6C138424C0E4C0F6F51453046A0"
+            ]
+          },
+          {
+            "Name": "BahamutPrime",
+            "Shapes": [
+              "M:Public, HideBySig:0:BossMod.Actor()"
+            ],
+            "Bodies": [
+              "B1F23DC0F8C40D742550802BD66BCA690D6F60DFC87B3B8F2C3C79F5C2ED49FE"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UCOB.OID",
+        "Members": [
+          {
+            "Name": "Twintania",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UCOB.OID:Public, Static, Literal, HasDefault:8159"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "BahamutPrime",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UCOB.OID:Public, Static, Literal, HasDefault:8168"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Helper",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UCOB.OID:Public, Static, Literal, HasDefault:6358"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UCOB.AID",
+        "Members": [
+          {
+            "Name": "Exaflare",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UCOB.AID:Public, Static, Literal, HasDefault:9967"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ExaflareFirst",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UCOB.AID:Public, Static, Literal, HasDefault:9968"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "ExaflareRest",
+            "Shapes": [
+              "F:BossMod.Stormblood.Ultimate.UCOB.AID:Public, Static, Literal, HasDefault:9969"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UCOB.UCOBStates",
+        "Members": [
+          {
+            "Name": "Phase5",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32)"
+            ],
+            "Bodies": [
+              "9698350BA8A44AB16E93AA90AEFFB5A88643E1B8A96915589D1E5611702E86CD"
+            ]
+          },
+          {
+            "Name": "P5Exaflare",
+            "Shapes": [
+              "M:Private, HideBySig:0:System.Void(System.UInt32,System.Single)"
+            ],
+            "Bodies": [
+              "F66F3091C4272DD7BF1E5B873FED056C5CD113E15477F873B78BC926E0B2D2A5"
+            ]
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Stormblood.Ultimate.UCOB.P5Exaflare",
+        "Members": [
+          {
+            "Name": "OnCastStarted",
+            "Shapes": [
+              "M:Public, Virtual, HideBySig:0:System.Void(BossMod.Actor,BossMod.ActorCastInfo)"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "OnEventCast",
+            "Shapes": [
+              "M:Public, Virtual, HideBySig:0:System.Void(BossMod.Actor,BossMod.ActorCastEvent)"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "NumCasts",
+            "Shapes": [
+              "F:System.Int32:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "Lines",
+            "Shapes": [
+              "F:System.Collections.Generic.List\u00601\u003CBossMod.Components.Exaflare\u002BLine\u003E:Public, InitOnly:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.Actor",
+        "Members": [
+          {
+            "Name": "IsDestroyed",
+            "Shapes": [
+              "F:System.Boolean:Public:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "IsTargetable",
+            "Shapes": [
+              "F:System.Boolean:Public:"
+            ],
+            "Bodies": null
+          }
+        ]
+      },
+      {
+        "Dependency": "BossMod",
+        "Type": "BossMod.StateMachine",
+        "Members": [
+          {
+            "Name": "_activation",
+            "Shapes": [
+              "F:System.DateTime:Private:"
+            ],
+            "Bodies": null
+          },
+          {
+            "Name": "_curTime",
+            "Shapes": [
+              "F:System.DateTime:Private:"
+            ],
+            "Bodies": null
+          }
+        ]
+      }
     ]
   }
 }

@@ -13,7 +13,7 @@ internal sealed class Compatibility
         typeof(Compatibility).Assembly.GetManifestResourceStream("SimBridge.Contracts.json")
             ?? throw new InvalidOperationException("Embedded compatibility profile missing"))!);
     internal static readonly string[] Scenarios = [Activation.Scenario, Activation.DarklitScenario, Activation.RelativityScenario,
-        Activation.CrystallizeScenario, Activation.DiamondScenario, Activation.FulgentScenario, Activation.LightRampantScenario, Activation.ParadiseScenario];
+        Activation.CrystallizeScenario, Activation.DiamondScenario, Activation.FulgentScenario, Activation.LightRampantScenario, Activation.ParadiseScenario, Activation.PredationScenario, Activation.SuppressionScenario, Activation.ExaflaresScenario];
     internal Dictionary<string, string[]> Issues { get; } = [];
     internal string BossVersion { get; }
     internal string AnoVersion { get; }

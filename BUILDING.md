@@ -1,5 +1,7 @@
 # Building and validating SimBridge
 
+For the v0.9.0 candidate, run `./Build-SimBridge-v0.8.0.ps1 -BossModVersions @('7.5.8.10','7.5.8.11')` from PowerShell. The script retains its original filename for existing callers. The following release history also documents the original public beta.
+
 The pinned Windows build has been verified from clean GitHub checkout `0b011fb8bd1333154637ae0a422d2e80013bfb48` on November 24, 2026. All ten offline groups and eleven installed compatibility groups passed with BossMod Reborn 7.5.8.10 and AnoMech 0.5.1.0. The DLL and two metadata files matched the tested development package by SHA-256. See [release/VERIFICATION.md](release/VERIFICATION.md). This is one verified environment, not a claim of universal reproducibility.
 
 The existing direct Roslyn build pins .NET SDK 10.0.100, .NET reference pack 10.0.0 and Dalamud API 15. It preserves the tested runtime source, compile arguments, resource name and internal AnoBossBridge identity. No upstream binaries are bundled. This is a Windows/local-Dalamud build path, not a general cross-platform or hermetic build.
@@ -11,7 +13,7 @@ The existing direct Roslyn build pins .NET SDK 10.0.100, .NET reference pack 10.
 - For compilation: Dalamud API 15 development DLLs under %APPDATA%\XIVLauncher\addon\Hooks\dev (Dalamud.dll, Dalamud.Common.dll, Lumina.dll, Dalamud.Bindings.ImGui.dll). The owner-reported reference versions were Dalamud 15.0.4.1 and Lumina 7.7.0; see [release/PROVENANCE.md](release/PROVENANCE.md) for exact embedded revisions and SHA-256 fingerprints.
 - For installed compatibility validation: AnoMech 0.5.1.0 and each selected BossMod Reborn version in the standard XIVLauncher\installedPlugins version folders under %APPDATA%, with their required assemblies and local Dalamud libraries available.
 
-Do not downgrade a working game setup merely to run the historical suite. Use the explicit installed-version target when validating a current environment. The default historical targets are still mandatory if no override is supplied. Both installed-assembly test groups receive the same list; other historical versions are not auto-discovered.
+Do not downgrade a working game setup merely to run the historical suite. Use the explicit installed-version target when validating a current environment. The v0.9.0 default targets are 7.5.8.10 and 7.5.8.11. Both installed-assembly test groups receive the same list; other historical versions are not auto-discovered.
 
 ## Commands
 

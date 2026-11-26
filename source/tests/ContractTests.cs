@@ -80,7 +80,7 @@ internal static class ContractTests
         // Direct compiler script and standard dotnet run output layouts.
         var plugin = Path.Combine(root, "bin", "Release", "AnoBossBridge.dll");
         if (!File.Exists(plugin)) plugin = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "bin", "Release", "AnoBossBridge.dll"));
-        CheckAssembly(plugin, "0.8.0.0", md =>
+        CheckAssembly(plugin, "0.9.0.0", md =>
         {
             foreach (var h in md.TypeDefinitions)
             {
