@@ -30,7 +30,7 @@ The verified live configuration for this development baseline was **AnoMech 0.5.
 
 ## Supported content
 
-Supported Futures Rewritten (Ultimate) simulations:
+### Futures Rewritten (Ultimate) — FRU
 
 | Phase | Simulation |
 | --- | --- |
@@ -38,6 +38,15 @@ Supported Futures Rewritten (Ultimate) simulations:
 | P3 | Ultimate Relativity, Apocalypse |
 | P4 | Darklit Dragonsong, Crystallize Time |
 | P5 | Fulgent Blade, Paradise Regained |
+
+### The Weapon's Refrain (Ultimate) — UWU
+
+- Ultimate Predation
+- Ultimate Suppression
+
+### The Unending Coil of Bahamut (Ultimate) — UCoB
+
+- P5 Exaflares
 
 This is a list of supported *integration scenarios*, not a claim of full strategy or role coverage. See [Compatibility and known limitations](COMPATIBILITY.md).
 
